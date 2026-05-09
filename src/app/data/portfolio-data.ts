@@ -64,7 +64,7 @@ export const PERSONAL_INFO = {
   title: 'Software Engineering Student',
   tagline: 'Interested in Web Development & Cybersecurity',
   about: 'I am a passionate Software Engineering student with a strong focus on building responsive, user-friendly web applications and exploring the fascinating world of cybersecurity. I love transforming complex problems into simple, beautiful, and intuitive designs. When I am not coding, you can find me reading up on the latest tech trends or contributing to open-source projects.',
-  email: 'wiem.bensalem@example.com', // Placeholder
-  linkedin: 'https://linkedin.com/in/wiem-ben-salem',
-  github: 'https://github.com/wiem-ben-salem'
+  email: 'bensalemwi2m@example.com', // Placeholder
+  linkedin: 'https://www.linkedin.com/in/wiem-ben-salem-302322295/',
+  github: 'https://github.com/wiem-b-salem'
 };
