@@ -1,0 +1,43 @@
+<nav class="fixed w-full z-50 glass-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 flex items-center cursor-pointer" (click)="scrollToSection('hero')">
+        <span class="font-pixel text-2xl tracking-widest text-purple-400 drop-shadow-[0_2px_0_#4c1d95] uppercase">Wiem</span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 items-center">
+        <button (click)="scrollToSection('about')" class="font-pixel text-xl text-slate-300 hover:text-white hover:drop-shadow-[0_2px_0_#94a3b8] uppercase tracking-wider">About</button>
+        <button (click)="scrollToSection('skills')" class="font-pixel text-xl text-slate-300 hover:text-white hover:drop-shadow-[0_2px_0_#94a3b8] uppercase tracking-wider">Skills</button>
+        <button (click)="scrollToSection('projects')" class="font-pixel text-xl text-slate-300 hover:text-white hover:drop-shadow-[0_2px_0_#94a3b8] uppercase tracking-wider">Projects</button>
+        <button (click)="scrollToSection('experience')" class="font-pixel text-xl text-slate-300 hover:text-white hover:drop-shadow-[0_2px_0_#94a3b8] uppercase tracking-wider">Experience</button>
+        <button (click)="scrollToSection('contact')" class="mc-btn-primary px-4 py-1 text-xl uppercase tracking-wider">Contact</button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button (click)="toggleMobileMenu()" class="mc-btn p-2">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          @if (!isMobileMenuOpen) {
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M4 6h16M4 12h16M4 18h16" />
+          }
+          @if (isMobileMenuOpen) {
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+          }
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
+    <div class="px-4 pt-2 pb-4 space-y-2 bg-[#0f1117] border-b-4 border-[#050608]">
+      <button (click)="scrollToSection('about')" class="mc-btn block w-full text-left px-4 py-2 text-xl uppercase tracking-wider">About</button>
+      <button (click)="scrollToSection('skills')" class="mc-btn block w-full text-left px-4 py-2 text-xl uppercase tracking-wider">Skills</button>
+      <button (click)="scrollToSection('projects')" class="mc-btn block w-full text-left px-4 py-2 text-xl uppercase tracking-wider">Projects</button>
+      <button (click)="scrollToSection('experience')" class="mc-btn block w-full text-left px-4 py-2 text-xl uppercase tracking-wider">Experience</button>
+      <button (click)="scrollToSection('contact')" class="mc-btn-primary block w-full text-left px-4 py-2 text-xl uppercase tracking-wider">Contact</button>
+    </div>
+  </div>
+</nav>
