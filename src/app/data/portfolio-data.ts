@@ -110,5 +110,5 @@ export const PERSONAL_INFO = {
   email: 'bensalemwi2m@example.com',
   linkedin: 'https://www.linkedin.com/in/wiem-ben-salem-302322295/',
   github: 'https://github.com/wiem-b-salem',
-  cvUrl: '/cv/wiem-ben-salem-cv.pdf',
+  cvUrl: 'cv/wiem-ben-salem-cv.pdf',
 };
