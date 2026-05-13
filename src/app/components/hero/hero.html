@@ -22,9 +22,18 @@
         <button (click)="scrollTo('projects')" class="mc-btn-primary px-8 py-4 text-2xl uppercase tracking-widest">
           Explore Projects
         </button>
-        <button (click)="scrollTo('contact')" class="mc-btn px-8 py-4 text-2xl uppercase tracking-widest">
-          Contact Me
-        </button>
+        <a [href]="personalInfo.linkedin" target="_blank" rel="noopener noreferrer"
+           class="mc-btn px-8 py-4 text-2xl uppercase tracking-widest inline-flex items-center justify-center">
+          LinkedIn
+        </a>
+        <a [href]="personalInfo.github" target="_blank" rel="noopener noreferrer"
+           class="mc-btn px-8 py-4 text-2xl uppercase tracking-widest inline-flex items-center justify-center">
+          GitHub
+        </a>
+        <a [href]="personalInfo.cvUrl" download
+           class="mc-btn px-8 py-4 text-2xl uppercase tracking-widest inline-flex items-center justify-center">
+          Download CV
+        </a>
       </div>
     </div>
   </div>

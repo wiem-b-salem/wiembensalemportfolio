@@ -14,57 +14,101 @@ export interface SkillCategory {
 export const PROJECTS: Project[] = [
   {
     title: 'TuniWay',
-    description: 'A comprehensive platform designed to facilitate navigation and exploration within Tunisia.',
-    techStack: ['Angular', 'Node.js', 'Express', 'MongoDB'],
-    features: ['User Authentication', 'Interactive Maps', 'Real-time Updates'],
-    githubLink: 'https://github.com/wiem-ben-salem/tuniway' // Assuming placeholder, user can update
+    description: 'A tourism exploration platform designed to simplify navigation and discovery across Tunisia through interactive and user-oriented features.',
+    techStack: ['Angular', 'Spring Boot', 'MongoDB'],
+    features: ['User Authentication', 'Chat System', 'Chatbot'],
+    githubLink: 'https://github.com/wiem-b-salem/Tuniway' // Assuming placeholder, user can update
   },
   {
     title: 'TravelTun',
-    description: 'A tourism-focused web application for booking travel experiences and discovering local heritage.',
-    techStack: ['React', 'Firebase', 'Tailwind CSS'],
-    features: ['Booking System', 'User Reviews', 'Admin Dashboard'],
+    description: 'A multi-platform tourism application designed for discovering local heritage and booking travel experiences, with an integrated admin dashboard for content and user management.',
+    techStack: ['Flutter', 'Firebase', 'Flask'],
+    features: ['Booking System', 'User Reviews', 'Admin Dashboard','User Management','Location Management','Payment Integration','Notification System','Chat System'],
     githubLink: 'https://github.com/wiem-ben-salem/traveltun'
   },
   {
     title: 'School Management System',
-    description: 'An internal management tool for educational institutions to track student progress, attendance, and grades.',
-    techStack: ['Java', 'Spring Boot', 'MySQL', 'Angular'],
-    features: ['Role-based Access Control', 'Grade Tracking', 'Attendance Management', 'Report Generation'],
+    description: 'A backend-focused school management system currently under development, designed to manage students, teachers, scheduling, and academic operations.',
+    techStack: ['Python', 'PostgreSQL','CLI Interface'],
+    features: ['Role-based Access Control', 'Grade Tracking', 'Attendance Management', 'Report Generation','Student Management','Teacher Management','Course Management','Enrollment Management','Automatic Time Table Management'],
     githubLink: 'https://github.com/wiem-ben-salem/school-management'
-  }
+  },
 ];
 
 export const SKILLS: SkillCategory[] = [
   {
     category: 'Languages',
-    skills: ['TypeScript', 'JavaScript', 'Java', 'Python', 'HTML/CSS']
+    skills: ['Python', 'JavaScript', 'Java', 'C++']
   },
   {
-    category: 'Frameworks & Libraries',
-    skills: ['Angular', 'React', 'Spring Boot', 'Tailwind CSS', 'Node.js']
+    category: 'Frameworks & Technologies',
+    skills: ['Angular', 'Flutter', 'Spring Boot', 'Node.js']
   },
   {
-    category: 'Databases & Tools',
-    skills: ['MySQL', 'MongoDB', 'Git', 'Docker', 'Figma']
+    category: 'Databases',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase']
+  },
+  {
+    category: 'Tools & DevOps',
+    skills: ['GitHub', 'Git', 'Docker']
+  },
+  {
+    category: 'Operating Systems',
+    skills: ['Linux(Ubuntu,Debian)', 'Windows']
+  },
+  {
+    category: 'Project Management Tools',
+    skills: ['Jira', 'Trello', 'Notion']
   }
 ];
 
 export const EXPERIENCE = [
   {
-    company: 'The Bridge (9antra)',
-    role: 'Software Engineering Intern',
-    duration: 'Summer 2023', // Placeholder, user can update
-    description: 'Contributed to the development of internal tools and web applications, collaborating closely with the engineering team to optimize performance and implement new features.'
+    company: 'BeeCoders',
+    role: 'End-of-Studies Internship',
+    duration: '02/2024-04/2024', 
+    description: 'Developed a Flutter mobile application with a web-based admin interface and integrated Firebase services for backend functionality and real-time features.'
+  }
+];
+
+export type LearningItemKind = 'technology' | 'certification';
+
+export interface LearningFocus {
+  title: string;
+  kind: LearningItemKind;
+  detail: string;
+  /** Optional link (e.g. course, badge, or exam verification). */
+  linkUrl?: string;
+  linkLabel?: string;
+}
+
+export const LEARNING: LearningFocus[] = [
+  {
+    title: 'Python Certifications (FreeCodeCamp & PCAP Preparation)',
+    kind: 'certification',
+    detail: '.'
+  },
+  {
+    title: 'AWS Cloud Fundamentals',
+    kind: 'certification',
+    detail: 'Core services, IAM, and cost-aware architecture in preparation for a cloud cert.',
+    linkUrl: 'https://aws.amazon.com/training/',
+    linkLabel: 'Training hub'
+  },
+  {
+    title: 'System design basics',
+    kind: 'technology',
+    detail: 'Scalability, caching, and API design for larger applications.'
   }
 ];
 
 export const PERSONAL_INFO = {
   name: 'Wiem Ben Salem',
   title: 'Software Engineering Student',
-  tagline: 'Interested in Web Development & Cybersecurity',
-  about: 'I am a passionate Software Engineering student with a strong focus on building responsive, user-friendly web applications and exploring the fascinating world of cybersecurity. I love transforming complex problems into simple, beautiful, and intuitive designs. When I am not coding, you can find me reading up on the latest tech trends or contributing to open-source projects.',
-  email: 'bensalemwi2m@example.com', // Placeholder
+  tagline: 'Building structured and scalable software systems.',
+  about: 'I\'m passionate about designing and building structured, scalable, and user-oriented applications.\nWhat I enjoy most is creating systems that solve real organizational and management problems — applications where different components work together seamlessly. I’m particularly interested in full-stack development, application architecture, and building reliable digital solutions.\nCurious and motivated, I enjoy learning new technologies, improving my problem-solving skills, and turning complex ideas into practical solutions.',
+  email: 'bensalemwi2m@example.com',
   linkedin: 'https://www.linkedin.com/in/wiem-ben-salem-302322295/',
-  github: 'https://github.com/wiem-b-salem'
+  github: 'https://github.com/wiem-b-salem',
+  cvUrl: '/cv/wiem-ben-salem-cv.pdf',
 };

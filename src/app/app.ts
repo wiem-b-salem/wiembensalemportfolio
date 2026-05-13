@@ -5,6 +5,7 @@ import { About } from './components/about/about';
 import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
 import { Experience } from './components/experience/experience';
+import { Learning } from './components/learning/learning';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
 
@@ -18,6 +19,7 @@ import { Footer } from './components/footer/footer';
     Skills,
     Projects,
     Experience,
+    Learning,
     Contact,
     Footer
   ],

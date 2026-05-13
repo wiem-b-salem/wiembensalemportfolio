@@ -1,0 +1,50 @@
+<section id="learning" class="py-24 bg-[#0a0c11]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-pixel text-4xl md:text-5xl font-bold text-white drop-shadow-[0_4px_0_#1e3a8a] uppercase tracking-widest inline-block">
+        Currently Learning
+      </h2>
+      <p class="font-pixel mt-6 text-2xl text-blue-200 drop-shadow-[0_2px_0_#000] max-w-2xl mx-auto tracking-wider">
+        Technologies and concepts I’m currently exploring and improving through certifications and personal learning.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      @for (item of learningItems; track item.title) {
+        <article class="mc-panel p-8 md:p-10">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+            <h3 class="font-pixel text-2xl md:text-3xl font-bold text-white drop-shadow-[0_2px_0_#000] uppercase tracking-wider">
+              {{ item.title }}
+            </h3>
+            <span
+              class="font-pixel shrink-0 mc-btn px-4 py-2 text-lg uppercase tracking-wider w-fit cursor-default"
+              [class.text-pink-300]="item.kind === 'technology'"
+              [class.text-cyan-300]="item.kind === 'certification'"
+            >
+              @if (item.kind === 'certification') {
+                Certification
+              } @else {
+                Technology
+              }
+            </span>
+          </div>
+          <p class="font-pixel text-xl text-slate-300 leading-relaxed drop-shadow-[0_1px_0_#000] tracking-wider">
+            {{ item.detail }}
+          </p>
+          @if (item.linkUrl) {
+            <p class="mt-6">
+              <a
+                [href]="item.linkUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-pixel mc-btn-primary inline-block px-6 py-3 text-lg uppercase tracking-wider"
+              >
+                {{ item.linkLabel ?? 'Learn more' }}
+              </a>
+            </p>
+          }
+        </article>
+      }
+    </div>
+  </div>
+</section>
