@@ -13,52 +13,188 @@ export interface SkillCategory {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'TuniWay',
-    description: 'A tourism exploration platform designed to simplify navigation and discovery across Tunisia through interactive and user-oriented features.',
-    techStack: ['Angular', 'Spring Boot', 'MongoDB'],
-    features: ['User Authentication', 'Chat System', 'Chatbot'],
-    githubLink: 'https://github.com/wiem-b-salem/Tuniway' // Assuming placeholder, user can update
+  title: 'Urban Traffic Management Platform',
+  description:
+    'A distributed microservices-based platform for managing and reporting urban traffic incidents in real time, featuring interactive map visualization, authentication, and containerized deployment.',
+  techStack: [
+    'NestJS',
+    'GraphQL',
+    'Apollo Server',
+    'Next.js',
+    'React',
+    'PostgreSQL',
+    'TypeORM',
+    'Docker',
+    'JWT',
+    'Leaflet',
+    'GitHub Actions'
+  ],
+  features: [
+    'Microservices Architecture',
+    'GraphQL API Gateway',
+    'JWT Authentication',
+    'Role-based Access Control',
+    'Interactive Map Visualization',
+    'Real-time Incident Reporting',
+    'Admin Dashboard',
+    'Docker Containerization',
+    'CI/CD Pipeline',
+    'Notification System'
+  ],
+  githubLink: 'https://github.com/wiem-b-salem/ProjetServicesWeb'
   },
+
+  {
+    title: 'Big Data Analytics Pipeline',
+    description:
+      'An end-to-end Big Data processing pipeline built for large-scale data ingestion, distributed processing, storage, and visualization.',
+    techStack: [
+      'Apache Spark',
+      'Hadoop HDFS',
+      'PostgreSQL',
+      'Python',
+      'Power BI',
+      'Docker'
+    ],
+    features: [
+      'Distributed Data Processing',
+      'HDFS Storage',
+      'Spark ETL Jobs',
+      'Data Visualization Dashboard',
+      'Automated Data Pipeline',
+      'Containerized Environment'
+    ],
+    githubLink: 'https://github.com/wiem-b-salem/Big-Data-Analytics-Pipeline/tree/main'
+  },
+
+  {
+    title: 'TuniWay',
+    description:
+      'A tourism exploration platform designed to simplify navigation and discovery across Tunisia through interactive and user-oriented features.',
+    techStack: [
+      'Angular',
+      'Spring Boot',
+      'MongoDB'
+    ],
+    features: [
+      'User Authentication',
+      'Chat System',
+      'AI Chatbot',
+      'Tourism Discovery',
+      'Interactive Navigation'
+    ],
+    githubLink: 'https://github.com/wiem-b-salem/Tuniway'
+  },
+
   {
     title: 'TravelTun',
-    description: 'A multi-platform tourism application designed for discovering local heritage and booking travel experiences, with an integrated admin dashboard for content and user management.',
-    techStack: ['Flutter', 'Firebase', 'Flask'],
-    features: ['Booking System', 'User Reviews', 'Admin Dashboard','User Management','Location Management','Payment Integration','Notification System','Chat System'],
+    description:
+      'A multi-platform tourism application for discovering local heritage and booking travel experiences with an integrated administration dashboard.',
+    techStack: [
+      'Flutter',
+      'Firebase',
+      'Flask'
+    ],
+    features: [
+      'Booking System',
+      'User Reviews',
+      'Admin Dashboard',
+      'User Management',
+      'Location Management',
+      'Payment Integration',
+      'Notification System',
+      'Chat System'
+    ],
     githubLink: 'https://github.com/wiem-ben-salem/traveltun'
   },
+
   {
     title: 'School Management System',
-    description: 'A backend-focused school management system currently under development, designed to manage students, teachers, scheduling, and academic operations.',
-    techStack: ['Python', 'PostgreSQL','CLI Interface'],
-    features: ['Role-based Access Control', 'Grade Tracking', 'Attendance Management', 'Report Generation','Student Management','Teacher Management','Course Management','Enrollment Management','Automatic Time Table Management'],
+    description:
+      'A backend-focused academic management system designed to manage students, teachers, scheduling, and school operations.',
+    techStack: [
+      'Python',
+      'PostgreSQL',
+      'CLI Interface'
+    ],
+    features: [
+      'Role-based Access Control',
+      'Grade Tracking',
+      'Attendance Management',
+      'Report Generation',
+      'Student Management',
+      'Teacher Management',
+      'Course Management',
+      'Enrollment Management',
+      'Automatic Timetable Generation'
+    ],
     githubLink: 'https://github.com/wiem-ben-salem/school-management'
-  },
+  }
 ];
 
 export const SKILLS: SkillCategory[] = [
   {
     category: 'Languages',
-    skills: ['Python', 'JavaScript', 'Java', 'C++']
+    skills: [
+      'Python',
+      'JavaScript',
+      'TypeScript',
+      'Java',
+      'C++',
+      'C#'
+    ]
   },
   {
     category: 'Frameworks & Technologies',
-    skills: ['Angular', 'Flutter', 'Spring Boot', 'Node.js']
+    skills: [
+      'Angular',
+      'Flutter',
+      '.NET / ASP.NET Core',
+      'Spring Boot',
+      'Node.js',
+      'Next.js',
+      'GraphQL'
+    ]
   },
   {
     category: 'Databases',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase']
+    skills: [
+      'PostgreSQL',
+      'MySQL',
+      'MongoDB',
+      'Firebase'
+    ]
+  },
+  {
+    category: 'Big Data & Analytics',
+    skills: [
+      'Apache Spark',
+      'Hadoop HDFS',
+      'Power BI'
+    ]
   },
   {
     category: 'Tools & DevOps',
-    skills: ['GitHub', 'Git', 'Docker']
+    skills: [
+      'Git',
+      'GitHub',
+      'Docker'
+    ]
   },
   {
     category: 'Operating Systems',
-    skills: ['Linux(Ubuntu,Debian)', 'Windows']
+    skills: [
+      'Linux (Ubuntu, Debian)',
+      'Windows'
+    ]
   },
   {
     category: 'Project Management Tools',
-    skills: ['Jira', 'Trello', 'Notion']
+    skills: [
+      'Jira',
+      'Trello',
+      'Notion'
+    ]
   }
 ];
 
@@ -66,7 +202,7 @@ export const EXPERIENCE = [
   {
     company: 'BeeCoders',
     role: 'End-of-Studies Internship',
-    duration: '02/2024-04/2024', 
+    duration: '02/2024-04/2024',
     description: 'Developed a Flutter mobile application with a web-based admin interface and integrated Firebase services for backend functionality and real-time features.'
   }
 ];
