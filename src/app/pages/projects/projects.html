@@ -1,0 +1,39 @@
+<div class="doc-head">
+  <h1 class="doc-title"><span class="md-hash" aria-hidden="true">##</span> projects/</h1>
+  <p class="doc-sub">{{ projects.length }} artifacts — full documentation for each lives in the explorer.</p>
+</div>
+
+<div class="repo-list replist">
+  @for (project of projects; track project.slug; let i = $index) {
+    <a class="repo-row replist-row" [routerLink]="['/projects', project.slug]">
+      <div class="replist-main">
+        <div class="replist-title">
+          <span class="replist-num" aria-hidden="true">{{ i + 1 }}</span>
+          <app-file-icon name="folder" [size]="16"></app-file-icon>
+          <h2 class="replist-name">{{ project.title }}</h2>
+        </div>
+        <p class="replist-desc">{{ project.shortDescription }}</p>
+        <div class="replist-tags">
+          @for (tech of project.techStack.slice(0, 8); track tech) {
+            <span class="tag">{{ tech }}</span>
+          }
+          @if (project.techStack.length > 8) {
+            <span class="tag tag-more">+{{ project.techStack.length - 8 }}</span>
+          }
+        </div>
+      </div>
+      <div class="replist-actions">
+        @if (project.githubLink) {
+          <a
+            class="btn btn-ghost btn-sm"
+            [href]="project.githubLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            (click)="$event.stopPropagation()"
+          >GitHub ↗</a>
+        }
+        <span class="replist-open" aria-hidden="true">Open →</span>
+      </div>
+    </a>
+  }
+</div>

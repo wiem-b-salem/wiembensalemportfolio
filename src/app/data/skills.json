@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Languages",
+    "skills": ["Python", "JavaScript", "TypeScript", "Java", "C++", "C#"]
+  },
+  {
+    "category": "Frameworks & Technologies",
+    "skills": ["Angular", "Flutter", ".NET / ASP.NET Core", "Spring Boot", "Node.js", "Next.js", "GraphQL"]
+  },
+  {
+    "category": "Databases",
+    "skills": ["PostgreSQL", "MySQL", "MongoDB", "Firebase"]
+  },
+  {
+    "category": "Big Data & Analytics",
+    "skills": ["Apache Spark", "Hadoop HDFS", "Power BI"]
+  },
+  {
+    "category": "Tools & DevOps",
+    "skills": ["Git", "GitHub", "Docker"]
+  },
+  {
+    "category": "Operating Systems",
+    "skills": ["Linux (Ubuntu, Debian)", "Windows"]
+  },
+  {
+    "category": "Project Management Tools",
+    "skills": ["Jira", "Trello", "Notion"]
+  }
+]

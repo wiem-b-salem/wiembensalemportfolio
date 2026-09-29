@@ -1,0 +1,114 @@
+:host {
+  display: block;
+}
+
+/* ---------- Header ---------- */
+
+.pd-path {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.pd-path app-file-icon {
+  color: var(--color-accent);
+}
+
+.pd-path-folder {
+  color: var(--color-text-2);
+}
+
+.pd-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+.pd-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-para);
+  margin: 0 0 16px;
+  max-width: 72ch;
+}
+
+.pd-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Sections ---------- */
+
+.pd-section {
+  margin: 0 0 36px;
+}
+
+.pd-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.pd-features {
+  gap: 0;
+  border: 1px solid var(--color-border);
+}
+
+.pd-feature {
+  padding: 10px 16px;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.pd-feature:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.pd-check {
+  color: var(--color-green);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.pd-feature-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-para);
+}
+
+.pd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ---------- Footer ---------- */
+
+.pd-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Not found ---------- */
+
+.pd-notfound {
+  padding: 40px 0;
+}
+
+.pd-notfound-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}

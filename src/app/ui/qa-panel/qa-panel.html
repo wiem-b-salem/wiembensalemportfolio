@@ -1,0 +1,62 @@
+<div class="qa-block">
+  <div class="qa-cmdline" aria-hidden="true">
+    <span class="qa-prompt">$</span>
+    <span class="qa-command">portfolio.explore</span>
+    @if (selected) {
+      <span class="qa-args">--query "{{ selected.id }}"</span>
+    }
+    <span class="qa-badge">static FAQ · no AI</span>
+  </div>
+
+  <div class="qa-body">
+    <p class="qa-intro">Select a question to query the portfolio.</p>
+
+    <div class="qa-cats" role="tablist" aria-label="Question categories">
+      <button
+        class="qa-cat"
+        [class.active]="activeCat === 'all'"
+        role="tab"
+        [attr.aria-selected]="activeCat === 'all'"
+        (click)="setCategory('all')"
+      >all</button>
+      @for (cat of categories; track cat.key) {
+        <button
+          class="qa-cat"
+          [class.active]="activeCat === cat.key"
+          role="tab"
+          [attr.aria-selected]="activeCat === cat.key"
+          (click)="setCategory(cat.key)"
+        >{{ cat.label.toLowerCase() }}</button>
+      }
+    </div>
+
+    <div class="qa-grid">
+      @for (q of filteredQuestions; track q.id) {
+        <button
+          class="qa-q"
+          [class.selected]="selected?.id === q.id"
+          (click)="select(q)"
+          [attr.aria-expanded]="selected?.id === q.id"
+        >
+          <span class="qa-q-mark" aria-hidden="true">&gt;</span>
+          <span class="qa-q-text">{{ q.question }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="qa-answer-zone" aria-live="polite">
+      @for (q of selectedAsArray; track q.id) {
+        <div class="qa-answer">
+          <span class="qa-answer-path" aria-hidden="true">./answers/{{ q.id }}.md</span>
+          <h3 class="qa-answer-title">{{ q.question }}</h3>
+          <p class="qa-answer-text">{{ q.answer }}</p>
+          @if (q.relatedSlug) {
+            <a class="qa-link" [routerLink]="['/projects', q.relatedSlug!]">
+              Open {{ relatedProjectTitle(q.relatedSlug!) }} →
+            </a>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

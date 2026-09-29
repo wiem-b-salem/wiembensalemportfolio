@@ -1,0 +1,37 @@
+<div class="doc-head">
+  <h1 class="doc-title"><span class="md-hash" aria-hidden="true">##</span> skills.json</h1>
+  <p class="doc-sub">{{ totalSkills }} technologies across {{ skills.length }} categories.</p>
+</div>
+
+<div class="table-wrap">
+  <table class="skills-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Technologies</th>
+        <th class="skills-count-cell">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (cat of skills; track cat.category) {
+        <tr>
+          <td class="skills-cat">{{ cat.category }}</td>
+          <td class="skills-badges-cell">
+            <div class="skills-badges">
+              @for (skill of cat.skills; track skill) {
+                <span class="tag">{{ skill }}</span>
+              }
+            </div>
+          </td>
+          <td class="skills-count">{{ cat.skills.length }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="skills-note">
+  <blockquote class="md-blockquote">
+    Also actively exploring: Python Certifications (FreeCodeCamp & PCAP), AWS Cloud Fundamentals, and system design basics.
+  </blockquote>
+</div>

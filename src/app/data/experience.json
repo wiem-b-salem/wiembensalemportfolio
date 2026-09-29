@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "medflow-internship",
+    "company": "MedFlow",
+    "role": "Software Engineering Internship",
+    "duration": "06/2024 - 07/2024",
+    "description": "8-week internship contributing to a full-stack healthcare SaaS platform. Worked on digitizing clinical workflows including electronic prescriptions, pharmacy fulfillment, appointment scheduling, and real-time doctor-patient messaging with role-based access control.",
+    "details": {
+      "responsibilities": [
+        "Developed electronic prescription features including QR code generation and versioned fulfillment tracking",
+        "Built pharmacy module components with inventory management and concurrency-safe dispensing logic",
+        "Implemented real-time doctor-patient messaging using WebSocket/STOMP",
+        "Contributed to appointment scheduling with doctor availability management",
+        "Worked with role-based access control for five distinct user roles"
+      ],
+      "technologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "PostgreSQL", "React 19", "TypeScript", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD"],
+      "contributions": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system."
+    }
+  },
+  {
+    "slug": "playsoft-internship",
+    "company": "PlaySoft",
+    "role": "Software Engineering Internship",
+    "duration": "06/2024 - 07/2024",
+    "description": "8-week internship where I built the AI Knowledge & HR Copilot — a full-stack pnpm monorepo combining a RAG-based knowledge base with structured HR workflows. Implemented a document embedding/vector-search pipeline, a two-layer hallucination-refusal system, CV extraction, and candidate scoring with role-based access control.",
+    "details": {
+      "responsibilities": [
+        "Designed and implemented the RAG-based knowledge base with document chunking and embedding pipeline",
+        "Built HNSW-indexed vector search with pgvector and cosine similarity",
+        "Implemented a two-layer hallucination-refusal system for reliable AI responses",
+        "Developed CV extraction pipeline using Gemini JSON-schema mode",
+        "Created deterministic candidate scoring algorithm (0-100)",
+        "Built onboarding checklists grounded in company documents"
+      ],
+      "technologies": ["NestJS 11", "Next.js 16", "React 19", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "pnpm Workspaces", "Docker", "GitLab CI"],
+      "contributions": "Built the AI Knowledge & HR Copilot from scratch as the primary backend engineer. Implemented the entire RAG pipeline, vector search, hallucination prevention, and HR workflow features."
+    }
+  },
+  {
+    "slug": "beecoders-internship",
+    "company": "BeeCoders",
+    "role": "End-of-Studies Internship",
+    "duration": "02/2024 - 04/2024",
+    "description": "Developed a Flutter mobile application with a web-based admin interface and integrated Firebase services for backend functionality and real-time features.",
+    "details": {
+      "responsibilities": [
+        "Developed cross-platform mobile application using Flutter",
+        "Built web-based admin dashboard for content and user management",
+        "Integrated Firebase services for authentication, database, and storage",
+        "Implemented real-time features using Firebase Cloud Firestore"
+      ],
+      "technologies": ["Flutter", "Firebase", "Dart"],
+      "contributions": "Delivered the TravelTun mobile application and admin interface, integrating Firebase services for a complete tourism platform."
+    }
+  }
+]

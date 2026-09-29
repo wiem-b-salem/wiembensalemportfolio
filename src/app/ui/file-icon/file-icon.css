@@ -1,0 +1,28 @@
+svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.fi-paper {
+  fill: var(--color-icon-paper);
+}
+
+.fi-line {
+  stroke: var(--color-icon-border);
+}
+
+.fi-tint {
+  fill: var(--color-accent-tint);
+}
+
+.fi-ring {
+  stroke: var(--color-accent);
+}
+
+.fi-strong {
+  stroke: var(--color-accent-strong);
+}
+
+.fi-strong-fill {
+  fill: var(--color-accent-strong);
+}

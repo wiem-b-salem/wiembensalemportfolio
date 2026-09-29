@@ -1,0 +1,48 @@
+<div class="doc-head">
+  <h1 class="doc-title"><span class="md-hash" aria-hidden="true">##</span> experience/</h1>
+  <p class="doc-sub">{{ experience.length }} positions — internships and end-of-studies work.</p>
+</div>
+
+<div class="exp-docs">
+  @for (exp of experience; track exp.slug) {
+    <article class="exp-card" [id]="exp.slug">
+      <p class="exp-path">{{ exp.slug }}.md</p>
+
+      <header class="exp-head">
+        <div class="exp-head-main">
+          <h2 class="exp-role">{{ exp.role }}</h2>
+          <div class="exp-org">{{ exp.company }}</div>
+        </div>
+        <span class="exp-duration">{{ exp.duration }}</span>
+      </header>
+
+      <p class="exp-desc">{{ exp.description }}</p>
+
+      @if (exp.details.responsibilities.length) {
+        <h3 class="exp-sub"><span class="md-hash" aria-hidden="true">###</span> Responsibilities</h3>
+        <ul class="exp-list">
+          @for (item of exp.details.responsibilities; track item) {
+            <li class="exp-li">
+              <span class="exp-check" aria-hidden="true">✓</span>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      }
+
+      @if (exp.details.contributions) {
+        <h3 class="exp-sub"><span class="md-hash" aria-hidden="true">###</span> Contributions</h3>
+        <p class="md-para">{{ exp.details.contributions }}</p>
+      }
+
+      @if (exp.details.technologies.length) {
+        <h3 class="exp-sub"><span class="md-hash" aria-hidden="true">###</span> Technologies</h3>
+        <div class="exp-tags">
+          @for (tech of exp.details.technologies; track tech) {
+            <span class="tag">{{ tech }}</span>
+          }
+        </div>
+      }
+    </article>
+  }
+</div>

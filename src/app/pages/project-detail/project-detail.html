@@ -1,0 +1,104 @@
+@if (project) {
+  <a class="doc-back" [routerLink]="['/projects']">← projects/</a>
+
+  <article class="pd-doc">
+    <header class="pd-head">
+      <p class="pd-path">
+        <app-file-icon name="code" [size]="14"></app-file-icon>
+        <span class="pd-path-folder">projects/</span>{{ project.slug }}.md
+      </p>
+      <h1 class="pd-title">{{ project.title }}</h1>
+      <p class="pd-desc">{{ project.shortDescription }}</p>
+      <div class="pd-meta">
+        @if (project.githubLink) {
+          <a class="btn btn-ghost" [href]="project.githubLink" target="_blank" rel="noopener noreferrer">
+            View source on GitHub ↗
+          </a>
+        }
+      </div>
+    </header>
+
+    <hr class="md-hr" aria-hidden="true" />
+
+    @if (project.details.role) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> My Role</h2>
+        <p class="md-para">{{ project.details.role }}</p>
+      </section>
+    }
+
+    @if (project.details.overview) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Overview</h2>
+        <p class="md-para">{{ project.details.overview }}</p>
+      </section>
+    }
+
+    @if (project.details.problem) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Problem</h2>
+        <p class="md-para">{{ project.details.problem }}</p>
+      </section>
+    }
+
+    @if (project.details.solution) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Solution</h2>
+        <p class="md-para">{{ project.details.solution }}</p>
+      </section>
+    }
+
+    @if (project.details.architecture) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Architecture</h2>
+        <p class="md-para">{{ project.details.architecture }}</p>
+      </section>
+    }
+
+    <section class="pd-section">
+      <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Key Features</h2>
+      <ul class="repo-list pd-features">
+        @for (feature of project.features; track feature) {
+          <li class="repo-row pd-feature">
+            <span class="pd-check" aria-hidden="true">✓</span>
+            <span class="pd-feature-text">{{ feature }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section class="pd-section">
+      <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Technologies</h2>
+      <div class="pd-tags">
+        @for (tech of project.techStack; track tech) {
+          <span class="tag">{{ tech }}</span>
+        }
+      </div>
+    </section>
+
+    @if (project.details.challenges) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Challenges</h2>
+        <p class="md-para">{{ project.details.challenges }}</p>
+      </section>
+    }
+
+    @if (project.details.whatILearned) {
+      <section class="pd-section">
+        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> What I Learned</h2>
+        <p class="md-para">{{ project.details.whatILearned }}</p>
+      </section>
+    }
+
+    <footer class="pd-footer">
+      <a class="btn" [routerLink]="['/projects']">← Back to projects</a>
+      <a class="btn btn-ghost" [routerLink]="['/']">Home</a>
+    </footer>
+  </article>
+} @else {
+  <div class="pd-notfound">
+    <h1 class="pd-notfound-title">Project not found</h1>
+    <p class="md-para">This file doesn't exist in the workspace.</p>
+    <a class="btn" [routerLink]="['/projects']">← Back to projects</a>
+  </div>
+}

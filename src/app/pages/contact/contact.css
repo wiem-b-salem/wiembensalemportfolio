@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+
+.contact-row {
+  min-width: 0;
+}
+
+.contact-row:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-muted);
+  width: 84px;
+  flex-shrink: 0;
+}
+
+.contact-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-row.contact-row:hover .contact-value {
+  color: var(--color-accent-strong);
+}
+
+.contact-arrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-muted);
+  flex-shrink: 0;
+}
+
+.contact-note {
+  margin-top: 24px;
+}

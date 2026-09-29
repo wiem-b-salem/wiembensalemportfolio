@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Python Certifications (FreeCodeCamp & PCAP Preparation)",
+    "kind": "certification",
+    "detail": "."
+  },
+  {
+    "title": "AWS Cloud Fundamentals",
+    "kind": "certification",
+    "detail": "Core services, IAM, and cost-aware architecture in preparation for a cloud cert.",
+    "linkUrl": "https://aws.amazon.com/training/",
+    "linkLabel": "Training hub"
+  },
+  {
+    "title": "System design basics",
+    "kind": "technology",
+    "detail": "Scalability, caching, and API design for larger applications."
+  }
+]
