@@ -1,133 +1,185 @@
 <article class="readme-doc">
-  <!-- ===== README header ===== -->
-  <header class="readme-header">
-    <h1 class="md-h1">
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <p class="quest-label hero-label">Player 1 &middot; Lvl 3 &middot; Backend</p>
+
+    <h1 class="hero-name">
       Hi, I'm Wiem <span aria-hidden="true">👋</span>
     </h1>
-    <p class="md-role">{{ profile.title }}</p>
-    <blockquote class="md-blockquote">{{ profile.tagline }}</blockquote>
 
-    <div class="md-badges" aria-label="Profile links">
-      <a class="badge-link" [href]="'mailto:' + profile.email">Email</a>
-      <a class="badge-link" [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="badge-link" [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a class="badge-link" [href]="profile.cvUrl" download>Resume</a>
+    <p class="hero-role">{{ profile.title }}</p>
+    <p class="hero-tagline">{{ profile.tagline }}</p>
+
+    <p class="status-pill hero-pill">
+      <span class="status-dot" aria-hidden="true"></span>
+      Open to internships
+    </p>
+
+    <div class="hero-links" aria-label="Profile links">
+      <a class="btn btn-primary" [href]="'mailto:' + profile.email">Email</a>
+      <a class="btn" [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn" [href]="profile.cvUrl" download>Resume</a>
     </div>
   </header>
 
-  <hr class="md-hr" aria-hidden="true" />
-
   <!-- ===== About ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> About Me</h2>
-    <p class="md-para whitespace-pre-line">{{ profile.about }}</p>
+  <section class="hero-block">
+    <div class="section-head">
+      <p class="quest-label">About</p>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <p class="body-text whitespace-pre-line">{{ profile.about }}</p>
   </section>
 
   <!-- ===== Developer snapshot ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Developer Snapshot</h2>
-    <pre class="md-codeblock"><code>{{ codeSnapshot }}</code></pre>
-  </section>
-
-  <!-- ===== Tech stack ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Tech Stack</h2>
-    <div class="skill-groups">
-      @for (cat of skills; track cat.category) {
-        <div class="skill-group">
-          <h3 class="skill-title">{{ cat.category }}</h3>
-          <div class="skill-badges">
-            @for (skill of cat.skills; track skill) {
-              <span class="tag">{{ skill }}</span>
-            }
-          </div>
-        </div>
-      }
+  <section class="hero-block">
+    <div class="section-head">
+      <p class="quest-label">Snapshot</p>
+      <h2 class="section-title">Developer Snapshot</h2>
     </div>
+    <pre class="code-card"><code>{{ codeSnapshot }}</code></pre>
   </section>
 
   <!-- ===== Featured projects ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Featured Projects</h2>
-    <div class="repo-list proj-list">
-      @for (project of projects; track project.slug) {
-        <a class="repo-row proj-entry" [routerLink]="['/projects', project.slug]">
-          <div class="proj-entry-head">
-            <span class="proj-entry-icon" aria-hidden="true">▸</span>
-            <span class="proj-entry-name">{{ project.slug }}/</span>
-            <h3 class="proj-entry-title">{{ project.title }}</h3>
-          </div>
-          <p class="proj-entry-desc">{{ project.shortDescription }}</p>
-          <div class="proj-entry-tags">
+  <section class="section" id="projects">
+    <div class="section-head">
+      <p class="quest-label">01 / Projects</p>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+
+    <div class="quest-grid">
+      @for (project of projects; track project.slug; let i = $index) {
+        <a class="card quest-card" [routerLink]="['/projects', project.slug]">
+          <span class="quest-label">Quest {{ i < 9 ? '0' : '' }}{{ i + 1 }}</span>
+          <h3 class="quest-card-title">{{ project.title }}</h3>
+          <p class="quest-card-desc">{{ project.shortDescription }}</p>
+          <div class="chip-row quest-card-tags">
             @for (tech of project.techStack.slice(0, 6); track tech) {
-              <span class="tag">{{ tech }}</span>
+              <span class="chip">{{ tech }}</span>
             }
             @if (project.techStack.length > 6) {
-              <span class="tag tag-more">+{{ project.techStack.length - 6 }}</span>
+              <span class="chip">+{{ project.techStack.length - 6 }}</span>
             }
           </div>
         </a>
       }
     </div>
-    <a class="md-more-link" [routerLink]="['/projects']">Browse all projects →</a>
+
+    <a class="text-link" [routerLink]="['/projects']">Browse all projects →</a>
   </section>
 
   <!-- ===== Experience ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Experience</h2>
+  <section class="section" id="experience">
+    <div class="section-head">
+      <p class="quest-label">02 / Experience</p>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
     <div class="exp-list">
       @for (exp of experience; track exp.slug) {
-        <div class="exp-row">
-          <span class="exp-dot" aria-hidden="true"></span>
+        <a class="exp-row" [routerLink]="['/experience']" [fragment]="exp.slug">
           <div class="exp-main">
-            <div class="exp-title">{{ exp.role }}</div>
+            <div class="exp-role">{{ exp.role }}</div>
             <div class="exp-org">{{ exp.company }}</div>
           </div>
-          <span class="exp-duration">{{ exp.duration }}</span>
+          <span class="quest-label exp-duration">{{ exp.duration }}</span>
+        </a>
+      }
+    </div>
+
+    <a class="text-link" [routerLink]="['/experience']">View experience details →</a>
+  </section>
+
+  <!-- ===== Tech stack ===== -->
+  <section class="section" id="stack">
+    <div class="section-head">
+      <p class="quest-label">03 / Tech Stack</p>
+      <h2 class="section-title">Tech Stack</h2>
+    </div>
+
+    <div class="stack-groups">
+      @for (cat of skills; track cat.category) {
+        <div class="stack-group">
+          <h3 class="quest-label stack-group-label">
+            {{ cat.category }}
+            <span class="stack-group-count">{{ cat.skills.length }}</span>
+          </h3>
+          <div class="chip-row">
+            @for (skill of cat.skills; track skill) {
+              <span class="chip">{{ skill }}</span>
+            }
+          </div>
         </div>
       }
     </div>
-    <a class="md-more-link" [routerLink]="['/experience']">View experience details →</a>
   </section>
 
   <!-- ===== Currently learning ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Currently Learning</h2>
-    <ul class="md-list">
+  <section class="section" id="learning">
+    <div class="section-head">
+      <p class="quest-label">04 / Learning</p>
+      <h2 class="section-title">Currently Learning</h2>
+    </div>
+
+    <ul class="learn-list">
       @for (item of learning; track item.title) {
-        <li class="md-li">
-          <span class="md-li-check" aria-hidden="true">[ ]</span>
-          <div class="md-li-body">
-            <span class="md-li-title">{{ item.title }}</span>
-            @if (item.detail && item.detail !== '.') {
-              <span class="md-li-detail"> — {{ item.detail }}</span>
-            }
+        <li class="learn-item">
+          <div class="learn-head">
+            <span class="learn-title">{{ item.title }}</span>
+            <span class="quest-label learn-kind" [class.learn-kind-cert]="item.kind === 'certification'">
+              {{ item.kind === 'certification' ? 'cert' : 'tech' }}
+            </span>
           </div>
-          <span class="md-li-kind" [class.kind-cert]="item.kind === 'certification'">
-            {{ item.kind === 'certification' ? 'cert' : 'tech' }}
-          </span>
+
+          @if (item.detail && item.detail !== '.') {
+            <p class="learn-detail">{{ item.detail }}</p>
+          }
+
+          <div class="learn-meter">
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [attr.aria-valuenow]="item.progress"
+              [attr.aria-label]="item.title"
+            >
+              <div class="progress-fill" [style.width.%]="item.progress"></div>
+            </div>
+            <span class="quest-label learn-value">{{ item.progress }}%</span>
+          </div>
         </li>
       }
     </ul>
   </section>
 
   <!-- ===== Explore (Q&A) ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> portfolio.explore</h2>
+  <section class="section" id="explore">
+    <div class="section-head">
+      <p class="quest-label">05 / Explore</p>
+      <h2 class="section-title">Explore</h2>
+    </div>
+
     <app-qa-panel></app-qa-panel>
   </section>
 
   <!-- ===== Contact ===== -->
-  <section class="md-section">
-    <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Contact</h2>
-    <p class="md-para">
+  <section class="section" id="contact">
+    <div class="section-head">
+      <p class="quest-label">06 / Contact</p>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <p class="body-text contact-copy">
       I'm open to internship opportunities, collaborative projects, and new experiences — feel free to reach out.
     </p>
-    <div class="md-cta">
+
+    <div class="contact-cta">
       <a class="btn btn-primary" [href]="'mailto:' + profile.email">Email</a>
-      <a class="btn btn-ghost" [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn btn-ghost" [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a class="btn btn-ghost" [href]="profile.cvUrl" download>Download CV</a>
+      <a class="btn" [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn" [href]="profile.cvUrl" download>Download CV</a>
     </div>
   </section>
 </article>

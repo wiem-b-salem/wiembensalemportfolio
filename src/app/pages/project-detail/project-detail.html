@@ -1,104 +1,118 @@
 @if (project) {
-  <a class="doc-back" [routerLink]="['/projects']">← projects/</a>
+  <a class="back-link" [routerLink]="['/projects']">← Back to projects</a>
 
   <article class="pd-doc">
     <header class="pd-head">
-      <p class="pd-path">
-        <app-file-icon name="code" [size]="14"></app-file-icon>
-        <span class="pd-path-folder">projects/</span>{{ project.slug }}.md
-      </p>
+      <p class="quest-label">Quest</p>
       <h1 class="pd-title">{{ project.title }}</h1>
       <p class="pd-desc">{{ project.shortDescription }}</p>
       <div class="pd-meta">
         @if (project.githubLink) {
-          <a class="btn btn-ghost" [href]="project.githubLink" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-primary" [href]="project.githubLink" target="_blank" rel="noopener noreferrer">
             View source on GitHub ↗
           </a>
         }
+        <a class="btn" [routerLink]="['/projects']">All projects</a>
       </div>
     </header>
 
-    <hr class="md-hr" aria-hidden="true" />
-
     @if (project.details.role) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> My Role</h2>
-        <p class="md-para">{{ project.details.role }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">My Role</h2>
+        </div>
+        <p class="body-text">{{ project.details.role }}</p>
       </section>
     }
 
     @if (project.details.overview) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Overview</h2>
-        <p class="md-para">{{ project.details.overview }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Overview</h2>
+        </div>
+        <p class="body-text">{{ project.details.overview }}</p>
       </section>
     }
 
     @if (project.details.problem) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Problem</h2>
-        <p class="md-para">{{ project.details.problem }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Problem</h2>
+        </div>
+        <p class="body-text">{{ project.details.problem }}</p>
       </section>
     }
 
     @if (project.details.solution) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Solution</h2>
-        <p class="md-para">{{ project.details.solution }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Solution</h2>
+        </div>
+        <p class="body-text">{{ project.details.solution }}</p>
       </section>
     }
 
     @if (project.details.architecture) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Architecture</h2>
-        <p class="md-para">{{ project.details.architecture }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Architecture</h2>
+        </div>
+        <p class="body-text">{{ project.details.architecture }}</p>
       </section>
     }
 
-    <section class="pd-section">
-      <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Key Features</h2>
-      <ul class="repo-list pd-features">
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Key Features</h2>
+      </div>
+      <ul class="checklist">
         @for (feature of project.features; track feature) {
-          <li class="repo-row pd-feature">
-            <span class="pd-check" aria-hidden="true">✓</span>
-            <span class="pd-feature-text">{{ feature }}</span>
+          <li class="checklist-item">
+            <span class="check-mark" aria-hidden="true">✓</span>
+            <span>{{ feature }}</span>
           </li>
         }
       </ul>
     </section>
 
-    <section class="pd-section">
-      <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Technologies</h2>
-      <div class="pd-tags">
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Technologies</h2>
+      </div>
+      <div class="chip-row">
         @for (tech of project.techStack; track tech) {
-          <span class="tag">{{ tech }}</span>
+          <span class="chip">{{ tech }}</span>
         }
       </div>
     </section>
 
     @if (project.details.challenges) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> Challenges</h2>
-        <p class="md-para">{{ project.details.challenges }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Challenges</h2>
+        </div>
+        <p class="body-text">{{ project.details.challenges }}</p>
       </section>
     }
 
     @if (project.details.whatILearned) {
-      <section class="pd-section">
-        <h2 class="md-h2"><span class="md-hash" aria-hidden="true">##</span> What I Learned</h2>
-        <p class="md-para">{{ project.details.whatILearned }}</p>
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">What I Learned</h2>
+        </div>
+        <p class="body-text">{{ project.details.whatILearned }}</p>
       </section>
     }
 
     <footer class="pd-footer">
       <a class="btn" [routerLink]="['/projects']">← Back to projects</a>
-      <a class="btn btn-ghost" [routerLink]="['/']">Home</a>
+      <a class="btn" [routerLink]="['/']">Home</a>
     </footer>
   </article>
 } @else {
   <div class="pd-notfound">
-    <h1 class="pd-notfound-title">Project not found</h1>
-    <p class="md-para">This file doesn't exist in the workspace.</p>
+    <h1 class="page-title">Project not found</h1>
+    <p class="body-text">This file doesn't exist in the workspace.</p>
     <a class="btn" [routerLink]="['/projects']">← Back to projects</a>
   </div>
 }

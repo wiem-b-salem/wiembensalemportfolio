@@ -1,37 +1,26 @@
-<div class="doc-head">
-  <h1 class="doc-title"><span class="md-hash" aria-hidden="true">##</span> skills.json</h1>
-  <p class="doc-sub">{{ totalSkills }} technologies across {{ skills.length }} categories.</p>
+<div class="page-head">
+  <h1 class="page-title">Tech Stack</h1>
+  <p class="page-sub">{{ totalSkills }} technologies across {{ skills.length }} categories.</p>
 </div>
 
-<div class="table-wrap">
-  <table class="skills-table">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Technologies</th>
-        <th class="skills-count-cell">#</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (cat of skills; track cat.category) {
-        <tr>
-          <td class="skills-cat">{{ cat.category }}</td>
-          <td class="skills-badges-cell">
-            <div class="skills-badges">
-              @for (skill of cat.skills; track skill) {
-                <span class="tag">{{ skill }}</span>
-              }
-            </div>
-          </td>
-          <td class="skills-count">{{ cat.skills.length }}</td>
-        </tr>
-      }
-    </tbody>
-  </table>
+<div class="stack-groups section">
+  @for (cat of skills; track cat.category) {
+    <div class="stack-group">
+      <h2 class="quest-label stack-group-label">
+        {{ cat.category }}
+        <span class="stack-group-count">{{ cat.skills.length }}</span>
+      </h2>
+      <div class="chip-row">
+        @for (skill of cat.skills; track skill) {
+          <span class="chip">{{ skill }}</span>
+        }
+      </div>
+    </div>
+  }
 </div>
 
 <div class="skills-note">
-  <blockquote class="md-blockquote">
+  <blockquote class="note">
     Also actively exploring: Python Certifications (FreeCodeCamp & PCAP), AWS Cloud Fundamentals, and system design basics.
   </blockquote>
 </div>

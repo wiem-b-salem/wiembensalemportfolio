@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { FileIcon } from '../../ui/file-icon/file-icon';
 import { getProject } from '../../data';
 import type { Project } from '../../data/models';
 
 @Component({
   selector: 'app-project-detail-page',
   standalone: true,
-  imports: [RouterLink, FileIcon],
+  imports: [RouterLink],
   templateUrl: './project-detail.html',
   styleUrls: ['./project-detail.css']
 })

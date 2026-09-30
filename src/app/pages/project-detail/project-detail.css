@@ -4,89 +4,50 @@
 
 /* ---------- Header ---------- */
 
-.pd-path {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0 0 12px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-muted);
+.pd-head {
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--color-line);
 }
 
-.pd-path app-file-icon {
-  color: var(--color-accent);
-}
-
-.pd-path-folder {
-  color: var(--color-text-2);
+.pd-head .quest-label {
+  margin-bottom: 12px;
 }
 
 .pd-title {
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-  color: var(--color-text);
-  margin: 0 0 12px;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+}
+
+@media (min-width: 768px) {
+  .pd-title {
+    font-size: 2.5rem;
+  }
 }
 
 .pd-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--color-para);
-  margin: 0 0 16px;
-  max-width: 72ch;
+  max-width: 70ch;
+  margin-top: 14px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-muted);
 }
 
 .pd-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
-/* ---------- Sections ---------- */
-
-.pd-section {
-  margin: 0 0 36px;
+.pd-doc .section {
+  max-width: 72ch;
 }
 
-.pd-section:last-of-type {
-  margin-bottom: 0;
-}
-
-.pd-features {
-  gap: 0;
-  border: 1px solid var(--color-border);
-}
-
-.pd-feature {
-  padding: 10px 16px;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.pd-feature:not(:last-child) {
-  border-bottom: 1px solid var(--color-border-soft);
-}
-
-.pd-check {
-  color: var(--color-green);
-  font-family: var(--font-mono);
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.pd-feature-text {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-para);
-}
-
-.pd-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.pd-doc .chip-row {
+  max-width: none;
 }
 
 /* ---------- Footer ---------- */
@@ -94,21 +55,18 @@
 .pd-footer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-border);
+  gap: 12px;
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 2px solid var(--color-line);
 }
 
 /* ---------- Not found ---------- */
 
 .pd-notfound {
-  padding: 40px 0;
-}
-
-.pd-notfound-title {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-block: 48px;
 }

@@ -1,39 +1,37 @@
-<div class="doc-head">
-  <h1 class="doc-title"><span class="md-hash" aria-hidden="true">##</span> projects/</h1>
-  <p class="doc-sub">{{ projects.length }} artifacts — full documentation for each lives in the explorer.</p>
+<div class="page-head">
+  <h1 class="page-title">Projects</h1>
+  <p class="page-sub">{{ projects.length }} artifacts — full documentation for each lives in the explorer.</p>
 </div>
 
-<div class="repo-list replist">
+<div class="quest-list section">
   @for (project of projects; track project.slug; let i = $index) {
-    <a class="repo-row replist-row" [routerLink]="['/projects', project.slug]">
-      <div class="replist-main">
-        <div class="replist-title">
-          <span class="replist-num" aria-hidden="true">{{ i + 1 }}</span>
-          <app-file-icon name="folder" [size]="16"></app-file-icon>
-          <h2 class="replist-name">{{ project.title }}</h2>
-        </div>
-        <p class="replist-desc">{{ project.shortDescription }}</p>
-        <div class="replist-tags">
+    <article class="card quest-item">
+      <a class="quest-item-main" [routerLink]="['/projects', project.slug]">
+        <span class="quest-label">Quest {{ i < 9 ? '0' : '' }}{{ i + 1 }}</span>
+        <h2 class="quest-item-title">{{ project.title }}</h2>
+        <p class="quest-item-desc">{{ project.shortDescription }}</p>
+
+        <div class="chip-row quest-item-tags">
           @for (tech of project.techStack.slice(0, 8); track tech) {
-            <span class="tag">{{ tech }}</span>
+            <span class="chip">{{ tech }}</span>
           }
           @if (project.techStack.length > 8) {
-            <span class="tag tag-more">+{{ project.techStack.length - 8 }}</span>
+            <span class="chip">+{{ project.techStack.length - 8 }}</span>
           }
         </div>
-      </div>
-      <div class="replist-actions">
+      </a>
+
+      <div class="quest-item-actions">
+        <a class="btn btn-sm" [routerLink]="['/projects', project.slug]">
+          View details
+          <span aria-hidden="true">→</span>
+        </a>
         @if (project.githubLink) {
-          <a
-            class="btn btn-ghost btn-sm"
-            [href]="project.githubLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            (click)="$event.stopPropagation()"
-          >GitHub ↗</a>
+          <a class="btn btn-sm" [href]="project.githubLink" target="_blank" rel="noopener noreferrer">
+            GitHub ↗
+          </a>
         }
-        <span class="replist-open" aria-hidden="true">Open →</span>
       </div>
-    </a>
+    </article>
   }
 </div>

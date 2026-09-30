@@ -1,192 +1,129 @@
 /* ============================================================
-   README homepage styles
+   Homepage — hero
    ============================================================ */
 
 .readme-doc {
   max-width: 100%;
 }
 
-.readme-header {
-  margin-bottom: 4px;
+.hero-label {
+  margin-bottom: 16px;
 }
 
-.md-role {
-  font-size: 15px;
-  font-weight: 600;
+.hero-name {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--color-ink);
-  margin: 0 0 14px;
 }
 
-.md-blockquote {
-  max-width: 58ch;
+@media (min-width: 768px) {
+  .hero-name {
+    font-size: 3rem;
+  }
 }
 
-.md-badges {
+.hero-role {
+  margin-top: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.hero-tagline {
+  margin-top: 6px;
+  max-width: 46ch;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.hero-pill {
+  margin-top: 24px;
+}
+
+.hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.badge-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: var(--color-bg);
-  color: var(--color-text-2);
-  font-size: 12px;
-  font-weight: 500;
-  font-family: var(--font-mono);
-  text-decoration: none;
-  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
-}
-
-.badge-link:hover {
-  background: var(--color-accent-tint);
-  border-color: var(--color-accent-border);
-  color: var(--color-accent-strong);
-  text-decoration: none;
-}
-
-.badge-link:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* ---------- Sections ---------- */
-
-.md-section {
+.hero-block {
   margin-top: 40px;
 }
 
-.md-section:first-of-type {
-  margin-top: 2px;
-}
-
-@media (min-width: 640px) {
-  .md-section {
-    margin-top: 46px;
+@media (min-width: 768px) {
+  .hero-block {
+    margin-top: 48px;
   }
-}
-
-/* ---------- Tech stack ---------- */
-
-.skill-groups {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 26px;
-}
-
-@media (min-width: 640px) {
-  .skill-groups {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.skill-title {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin: 0 0 10px;
-}
-
-.skill-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
 }
 
 /* ---------- Featured projects ---------- */
 
-.proj-entry {
-  align-items: flex-start;
+.quest-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .quest-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.quest-card {
+  display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 24px;
 }
 
-.proj-entry:not(:last-child) {
-  border-bottom: 1px solid var(--color-border-soft);
+.quest-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
 }
 
-.proj-entry-head {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  min-width: 0;
-}
-
-.proj-entry-icon {
-  color: var(--color-accent);
-  font-size: 11px;
-  flex-shrink: 0;
-}
-
-.proj-entry-name {
-  font-family: var(--font-mono);
-  font-size: 12px;
+.quest-card-desc {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--color-muted);
-  flex-shrink: 0;
 }
 
-.proj-entry-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.quest-card-tags {
+  margin-top: 4px;
 }
 
-.repo-row.proj-entry:hover .proj-entry-title {
-  color: var(--color-accent-strong);
-}
-
-.proj-entry-desc {
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--color-text-2);
-  margin: 0;
-}
-
-.proj-entry-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
-}
-
-/* ---------- Experience list ---------- */
+/* ---------- Experience ---------- */
 
 .exp-list {
   display: flex;
   flex-direction: column;
+  border-top: 2px solid var(--color-line);
 }
 
 .exp-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 13px 4px;
-  border-bottom: 1px solid var(--color-border-soft);
+  gap: 16px;
+  padding: 20px 4px;
+  border-bottom: 2px solid var(--color-line);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
-.exp-row:last-child {
-  border-bottom: none;
-}
-
-.exp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--color-accent);
-  flex-shrink: 0;
+.exp-row:hover {
+  background: var(--color-accent-soft);
+  text-decoration: none;
 }
 
 .exp-main {
@@ -194,90 +131,127 @@
   min-width: 0;
 }
 
-.exp-title {
-  font-size: 14px;
+.exp-role {
+  font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-text);
+  line-height: 1.3;
+  color: var(--color-ink);
 }
 
 .exp-org {
-  font-size: 12.5px;
-  color: var(--color-text-2);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-muted);
 }
 
 .exp-duration {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--color-muted);
+  flex-shrink: 0;
   white-space: nowrap;
 }
 
-/* ---------- Learning list ---------- */
+/* ---------- Tech stack ---------- */
 
-.md-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.stack-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 32px;
 }
 
-.md-li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--color-text);
-  line-height: 1.55;
+@media (min-width: 768px) {
+  .stack-groups {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.md-li-check {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--color-muted);
-  flex-shrink: 0;
-  padding-top: 1px;
-  letter-spacing: -0.5px;
-}
-
-.md-li-body {
+.stack-group {
   min-width: 0;
 }
 
-.md-li-title {
-  font-weight: 600;
+.stack-group-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-line);
 }
 
-.md-li-detail {
-  color: var(--color-text-2);
+.stack-group-count {
+  color: var(--color-muted);
 }
 
-.md-li-kind {
-  margin-top: 1px;
-  flex-shrink: 0;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--color-ink);
-  background: var(--color-tag-bg);
-  border: 1px solid var(--color-tag-border);
-  border-radius: 4px;
-  padding: 2px 7px;
+/* ---------- Currently learning ---------- */
+
+.learn-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.md-li-kind.kind-cert {
-  background: var(--color-green-tint);
-  border-color: var(--color-green-border);
-  color: var(--color-green);
+.learn-item {
+  padding: 20px 22px;
+  border: 2px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
 }
 
-/* ---------- Contact CTA ---------- */
-
-.md-cta {
+.learn-head {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+
+.learn-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+
+.learn-kind {
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+}
+
+.learn-kind-cert {
+  background: var(--color-success-soft);
+}
+
+.learn-detail {
+  margin-top: 8px;
+  max-width: 68ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.learn-meter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-top: 16px;
+}
+
+.learn-value {
+  flex-shrink: 0;
+  width: 4ch;
+  text-align: right;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-copy {
+  max-width: 62ch;
+}
+
+.contact-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
 }

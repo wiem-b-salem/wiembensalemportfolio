@@ -1,87 +1,52 @@
-<div class="app-shell">
-  <!-- ===== Repo header bar ===== -->
-  <header class="topbar">
-    <button
-      class="menu-btn lg:hidden"
-      aria-label="Toggle navigation"
-      [attr.aria-expanded]="drawerOpen"
-      (click)="drawerOpen = !drawerOpen"
-    >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+<div class="shell">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <a class="brand" [routerLink]="['/']" (click)="closeDrawer()">
-      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
-      <span>wiem.dev</span>
-    </a>
+  <header class="topnav">
+    <div class="page topnav-inner">
+      <a class="brand" routerLink="/">Wiem Ben Salem</a>
 
-    <span class="crumb-sep" aria-hidden="true">/</span>
-    <span class="crumb" [title]="currentTitle">{{ currentTitle }}</span>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
+        <a class="nav-link" routerLink="/experience" routerLinkActive="active">Experience</a>
+        <a class="nav-link" routerLink="/skills" routerLinkActive="active">Skills</a>
+        <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+      </nav>
 
-    <button
-      class="theme-toggle"
-      type="button"
-      [attr.aria-label]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
-      [attr.title]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
-      (click)="toggleTheme()"
-    >
-      @if (theme === 'dark') {
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-        </svg>
-      } @else {
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      }
-    </button>
+      <div class="topnav-actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          [attr.aria-label]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+          [attr.title]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+          (click)="toggleTheme()"
+        >
+          @if (theme === 'dark') {
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+            </svg>
+          } @else {
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          }
+        </button>
 
-    <a class="topbar-github hidden md:inline" [href]="profile.github" target="_blank" rel="noopener noreferrer">
-      github ↗
-    </a>
+        <a class="btn btn-sm topnav-resume" [href]="profile.cvUrl" download>Resume</a>
+      </div>
+    </div>
   </header>
 
-  <!-- ===== Body ===== -->
-  <div class="app-body">
-    <!-- Sidebar (desktop) -->
-    <aside class="sidebar hidden lg:flex" aria-label="File explorer">
-      <app-sidebar-entries
-        [rootFiles]="rootFiles"
-        [externalFiles]="externalFiles"
-        [collapsed]="collapsed"
-        (toggleFolder)="toggleFolder($event)"
-      ></app-sidebar-entries>
-    </aside>
+  <main id="main" class="main" tabindex="-1">
+    <div class="page main-inner">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 
-    <!-- Drawer (mobile) -->
-    @if (drawerOpen) {
-      <div class="drawer-backdrop" (click)="closeDrawer()"></div>
-      <aside class="drawer" role="dialog" aria-label="Navigation drawer" [attr.aria-modal]="true">
-        <app-sidebar-entries
-          [rootFiles]="rootFiles"
-          [externalFiles]="externalFiles"
-          [collapsed]="collapsed"
-          (toggleFolder)="toggleFolder($event)"
-        ></app-sidebar-entries>
-      </aside>
-    }
-
-    <!-- Main content -->
-    <main class="main" tabindex="-1">
-      <div class="doc-window">
-        <router-outlet></router-outlet>
-      </div>
-    </main>
-  </div>
-
-  <!-- ===== Footer ===== -->
-  <footer class="footer" aria-label="Footer">
-    <span>© {{ year }} {{ profile.name }}</span>
-    <span class="footer-sep" aria-hidden="true"></span>
-    <span class="hidden sm:inline">wiem-b-salem/portfolio</span>
-    <span class="footer-right">Angular · Tailwind</span>
+  <footer class="footer">
+    <div class="page footer-inner">
+      <span>&copy; {{ year }} {{ profile.name }}</span>
+      <span class="footer-right quest-label">Angular &middot; Tailwind</span>
+    </div>
   </footer>
 </div>
