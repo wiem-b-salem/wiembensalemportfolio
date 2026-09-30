@@ -1,39 +1,56 @@
 [
   {
-    "slug": "medflow-internship",
-    "company": "MedFlow",
-    "role": "Software Engineering Internship",
-    "duration": "06/2024 - 07/2024",
-    "description": "8-week internship contributing to a full-stack healthcare SaaS platform. Worked on digitizing clinical workflows including electronic prescriptions, pharmacy fulfillment, appointment scheduling, and real-time doctor-patient messaging with role-based access control.",
-    "details": {
-      "responsibilities": [
-        "Developed electronic prescription features including QR code generation and versioned fulfillment tracking",
-        "Built pharmacy module components with inventory management and concurrency-safe dispensing logic",
-        "Implemented real-time doctor-patient messaging using WebSocket/STOMP",
-        "Contributed to appointment scheduling with doctor availability management",
-        "Worked with role-based access control for five distinct user roles"
-      ],
-      "technologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "PostgreSQL", "React 19", "TypeScript", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD"],
-      "contributions": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system."
-    }
-  },
-  {
     "slug": "playsoft-internship",
     "company": "PlaySoft",
     "role": "Software Engineering Internship",
     "duration": "06/2024 - 07/2024",
-    "description": "8-week internship where I built the AI Knowledge & HR Copilot — a full-stack pnpm monorepo combining a RAG-based knowledge base with structured HR workflows. Implemented a document embedding/vector-search pipeline, a two-layer hallucination-refusal system, CV extraction, and candidate scoring with role-based access control.",
+    "description": "8-week internship where I built the AI Knowledge & HR Copilot from scratch — a full-stack pnpm monorepo combining a RAG-based knowledge base with structured HR workflows. Implemented the document embedding and vector-search pipeline, a two-layer hallucination-refusal system, CV extraction, and candidate scoring with role-based access control.",
     "details": {
+      "highlights": [
+        "Built the entire AI Knowledge & HR Copilot end to end as the primary backend engineer — from database schema to deployed API",
+        "Shipped a working RAG pipeline: document ingestion, chunking, embedding generation, and HNSW-indexed vector search on pgvector",
+        "Designed a two-layer hallucination-refusal system so the assistant stays silent instead of inventing answers outside its sources",
+        "Delivered a deterministic 0-100 candidate scoring algorithm layered on top of Gemini CV extraction — no LLM in the scoring decision",
+        "Added unit tests and E2E tests running against a live database, wired into the GitLab CI pipeline"
+      ],
       "responsibilities": [
         "Designed and implemented the RAG-based knowledge base with document chunking and embedding pipeline",
         "Built HNSW-indexed vector search with pgvector and cosine similarity",
         "Implemented a two-layer hallucination-refusal system for reliable AI responses",
         "Developed CV extraction pipeline using Gemini JSON-schema mode",
         "Created deterministic candidate scoring algorithm (0-100)",
-        "Built onboarding checklists grounded in company documents"
+        "Built onboarding checklists grounded in company documents",
+        "Enforced RBAC with team-scoped manager permissions across every HR endpoint",
+        "Documented the API with Swagger and set up Jest unit tests plus E2E tests against a live database"
       ],
       "technologies": ["NestJS 11", "Next.js 16", "React 19", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "pnpm Workspaces", "Docker", "GitLab CI"],
-      "contributions": "Built the AI Knowledge & HR Copilot from scratch as the primary backend engineer. Implemented the entire RAG pipeline, vector search, hallucination prevention, and HR workflow features."
+      "contributions": "Built the AI Knowledge & HR Copilot from scratch as the primary backend engineer. Implemented the entire RAG pipeline, vector search, hallucination prevention, CV extraction, and HR workflow features."
+    }
+  },
+  {
+    "slug": "medflow-internship",
+    "company": "MedFlow",
+    "role": "Software Engineering Internship",
+    "duration": "06/2024 - 07/2024",
+    "description": "8-week internship contributing to a production healthcare SaaS platform. Owned the electronic prescription and localization areas of the MVP — QR-verified pharmacy fulfillment, concurrency-safe dispensing, and real-time doctor-patient messaging — with role-based access control across five user roles.",
+    "details": {
+      "highlights": [
+        "Owned two full domains of a production healthcare MVP — prescriptions and localization — as a solo contributor on a shared codebase",
+        "Implemented the QR-verified pharmacy workflow end to end: code generation, scan verification, and versioned fulfillment tracking",
+        "Built concurrency-safe dispensing logic so parallel pharmacy requests cannot oversell a stock batch",
+        "Contributed real-time doctor-patient messaging over WebSocket/STOMP to the live platform",
+        "Shipped features under GitLab CI/CD with Liquibase-managed schema migrations and Swagger documentation"
+      ],
+      "responsibilities": [
+        "Developed electronic prescription features including QR code generation and versioned fulfillment tracking",
+        "Built pharmacy module components with inventory management and concurrency-safe dispensing logic",
+        "Implemented real-time doctor-patient messaging using WebSocket/STOMP",
+        "Contributed to appointment scheduling with doctor availability management",
+        "Localized the user interface with i18next across the modules I owned",
+        "Worked with role-based access control for five distinct user roles"
+      ],
+      "technologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD"],
+      "contributions": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system."
     }
   },
   {
@@ -41,15 +58,22 @@
     "company": "BeeCoders",
     "role": "End-of-Studies Internship",
     "duration": "02/2024 - 04/2024",
-    "description": "Developed a Flutter mobile application with a web-based admin interface and integrated Firebase services for backend functionality and real-time features.",
+    "description": "End-of-studies internship where I delivered the TravelTun mobile application and its web admin interface — a Flutter cross-platform client backed by Firebase services for authentication, data, and real-time updates.",
     "details": {
+      "highlights": [
+        "Delivered a shipped Flutter application covering iOS and Android from a single codebase",
+        "Built the companion web admin dashboard used to manage listings, users, and bookings",
+        "Integrated Firebase end to end — authentication, Firestore, Cloud Storage, and real-time updates",
+        "Implemented the booking, review, and payment flows connecting travelers with local tourism businesses"
+      ],
       "responsibilities": [
         "Developed cross-platform mobile application using Flutter",
         "Built web-based admin dashboard for content and user management",
         "Integrated Firebase services for authentication, database, and storage",
-        "Implemented real-time features using Firebase Cloud Firestore"
+        "Implemented real-time features using Firebase Cloud Firestore",
+        "Implemented booking, review, and payment flows in the mobile client"
       ],
-      "technologies": ["Flutter", "Firebase", "Dart"],
+      "technologies": ["Flutter", "Firebase", "Dart", "Flask"],
       "contributions": "Delivered the TravelTun mobile application and admin interface, integrating Firebase services for a complete tourism platform."
     }
   }

@@ -1,5 +1,41 @@
 [
   {
+    "slug": "ai-knowledge-hr-copilot",
+    "title": "AI Knowledge & HR Copilot",
+    "shortDescription": "An internal AI assistant combining a RAG knowledge base with HR workflows — vector-search document retrieval with a two-layer hallucination-refusal system, plus CV extraction and candidate scoring.",
+    "techStack": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
+    "features": ["RAG-based Knowledge Base with document chunking and embedding pipeline", "HNSW-indexed Vector Search with cosine similarity", "Two-layer Hallucination-refusal System (threshold gate + context-grounded generation)", "CV Extraction via Gemini JSON-schema mode", "Candidate Scoring with deterministic skill-matching algorithm (0-100)", "Onboarding Checklists grounded in company documents", "RBAC with Team-scoped Manager Permissions", "Hybrid Semantic + Keyword Document Search", "Swagger-documented API", "Jest Unit Tests + E2E Tests Against Live Database"],
+    "githubLink": "",
+    "details": {
+      "role": "Built the AI Knowledge & HR Copilot as the primary backend engineer — the RAG pipeline, vector search, hallucination prevention, CV extraction, and HR workflow features.",
+      "overview": "An internal AI assistant combining a RAG-based knowledge base with structured HR workflows. The system provides vector-search document retrieval with a two-layer hallucination-refusal system, CV extraction, and candidate scoring.",
+      "problem": "Organizations need efficient ways to search internal documents, onboard new employees, and evaluate candidates. Traditional keyword search misses semantic context, and HR processes are often manual and time-consuming.",
+      "solution": "Built a pnpm monorepo with NestJS 11 backend and Next.js 16 frontend. Implemented a RAG pipeline with document chunking, embedding generation, and HNSW-indexed vector search using pgvector. Added a two-layer hallucination-refusal system for reliable AI-generated answers. CV extraction uses Gemini's JSON-schema mode with deterministic candidate scoring.",
+      "architecture": "pnpm monorepo with NestJS 11 (backend) and Next.js 16 (frontend). PostgreSQL 16 with pgvector for vector storage and HNSW indexing. Document chunking and embedding pipeline for RAG. Two-layer hallucination-refusal: threshold gate + context-grounded generation. JWT/Passport authentication with RBAC. Docker for development. GitLab CI for deployment.",
+      "keyTechnologies": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
+      "challenges": "Implementing reliable RAG with hallucination prevention, designing the two-layer refusal system, building a robust document chunking and embedding pipeline, and creating deterministic candidate scoring that integrates with AI-extracted CV data.",
+      "whatILearned": "RAG architecture patterns, vector database design with pgvector, hallucination prevention strategies, Gemini API integration for structured extraction, and monorepo management with pnpm workspaces."
+    }
+  },
+  {
+    "slug": "medflow",
+    "title": "MedFlow — Healthcare SaaS Platform",
+    "shortDescription": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
+    "techStack": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
+    "features": ["Role-based Access Control (RBAC) for admins, doctors, patients, secretaries, and pharmacists", "JWT + OAuth2 Authentication with Argon2 password hashing", "Electronic Prescriptions with QR code generation, line items, lab tests, and versioned fulfillment tracking", "Pharmacy Module with inventory batches, stock movements, QR verification, and concurrency-safe dispensing", "Appointment Scheduling with doctor availability and status history", "Real-time Doctor-Patient Chat via WebSocket/STOMP", "Transactional Notification Events (AFTER_COMMIT dispatch)", "Email Verification and Multilingual UI (i18next)", "Modular Monolith Architecture with clean domain boundaries", "SpringDoc OpenAPI / Swagger UI and REST Docs"],
+    "githubLink": "",
+    "details": {
+      "role": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system.",
+      "overview": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
+      "problem": "Healthcare workflows are often fragmented across paper-based systems, disconnected software tools, and manual processes. This leads to inefficiencies in prescription management, pharmacy fulfillment, appointment scheduling, and patient-doctor communication.",
+      "solution": "Built a modular monolith with Spring Boot 4.1 on the backend and React 19 on the frontend. The system provides electronic prescriptions with QR verification, a pharmacy module with inventory management, appointment scheduling, real-time chat, and role-based access for five distinct user roles.",
+      "architecture": "Modular monolith architecture with clean domain boundaries using Spring Boot 4.1. Backend uses Spring Security with OAuth2/JWT and Argon2 password hashing. Database migrations managed with Liquibase. Frontend built with React 19, TypeScript, Vite 8, TailwindCSS 4, and shadcn/ui. Real-time features via WebSocket/STOMP. Docker Compose for development. GitLab CI/CD for deployment.",
+      "keyTechnologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
+      "challenges": "Designing a modular monolith with clean domain boundaries, implementing QR-verified prescription and pharmacy workflows, managing concurrent pharmacy dispensing operations, building a real-time chat system, and integrating transactional notification events.",
+      "whatILearned": "Modular monolith architecture patterns, Spring Boot 4.1 with modern Spring ecosystem, healthcare domain modeling, QR code generation and verification workflows, and concurrent operation handling in a multi-role system."
+    }
+  },
+  {
     "slug": "urban-traffic-management",
     "title": "Urban Traffic Management Platform",
     "shortDescription": "A distributed microservices-based platform for managing and reporting urban traffic incidents in real time, featuring interactive map visualization, authentication, and containerized deployment.",
@@ -65,59 +101,6 @@
       "keyTechnologies": ["Flutter", "Firebase", "Flask"],
       "challenges": "Building a cross-platform mobile experience with Flutter, integrating multiple Firebase services, implementing a payment system, and designing an admin dashboard that provides meaningful management capabilities.",
       "whatILearned": "Cross-platform mobile development with Flutter, Firebase ecosystem integration, payment system implementation, and building admin interfaces for non-technical users."
-    }
-  },
-  {
-    "slug": "school-management-system",
-    "title": "School Management System",
-    "shortDescription": "A backend-focused academic management system designed to manage students, teachers, scheduling, and school operations.",
-    "techStack": ["Python", "PostgreSQL", "CLI Interface"],
-    "features": ["Role-based Access Control", "Grade Tracking", "Attendance Management", "Report Generation", "Student Management", "Teacher Management", "Course Management", "Enrollment Management", "Automatic Timetable Generation"],
-    "githubLink": "https://github.com/wiem-ben-salem/school-management",
-    "details": {
-      "overview": "A backend-focused academic management system designed to manage students, teachers, scheduling, and school operations. The system provides a CLI interface for administrative tasks and emphasizes data integrity and role-based access control.",
-      "problem": "Schools need efficient systems to manage student records, teacher assignments, course scheduling, and grade tracking. Manual processes are error-prone and time-consuming for administrators.",
-      "solution": "Built a Python backend with PostgreSQL for data storage and a CLI interface for administrative operations. The system supports role-based access, grade tracking, attendance management, automatic timetable generation, and report generation.",
-      "architecture": "Python handles business logic and data access through a structured CLI interface. PostgreSQL provides reliable relational data storage with proper constraints and relationships. The system is designed around role-based access control to ensure data security.",
-      "keyTechnologies": ["Python", "PostgreSQL", "CLI Interface"],
-      "challenges": "Designing a robust database schema for school operations, implementing automatic timetable generation with constraint satisfaction, and ensuring data integrity across complex relationships.",
-      "whatILearned": "Database design for complex relational data, CLI application architecture, role-based access control patterns, and constraint-based scheduling algorithms."
-    }
-  },
-  {
-    "slug": "medflow",
-    "title": "MedFlow — Healthcare SaaS Platform",
-    "shortDescription": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
-    "techStack": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
-    "features": ["Role-based Access Control (RBAC) for admins, doctors, patients, secretaries, and pharmacists", "JWT + OAuth2 Authentication with Argon2 password hashing", "Electronic Prescriptions with QR code generation, line items, lab tests, and versioned fulfillment tracking", "Pharmacy Module with inventory batches, stock movements, QR verification, and concurrency-safe dispensing", "Appointment Scheduling with doctor availability and status history", "Real-time Doctor-Patient Chat via WebSocket/STOMP", "Transactional Notification Events (AFTER_COMMIT dispatch)", "Email Verification and Multilingual UI (i18next)", "Modular Monolith Architecture with clean domain boundaries", "SpringDoc OpenAPI / Swagger UI and REST Docs"],
-    "githubLink": "",
-    "details": {
-      "role": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system.",
-      "overview": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
-      "problem": "Healthcare workflows are often fragmented across paper-based systems, disconnected software tools, and manual processes. This leads to inefficiencies in prescription management, pharmacy fulfillment, appointment scheduling, and patient-doctor communication.",
-      "solution": "Built a modular monolith with Spring Boot 4.1 on the backend and React 19 on the frontend. The system provides electronic prescriptions with QR verification, a pharmacy module with inventory management, appointment scheduling, real-time chat, and role-based access for five distinct user roles.",
-      "architecture": "Modular monolith architecture with clean domain boundaries using Spring Boot 4.1. Backend uses Spring Security with OAuth2/JWT and Argon2 password hashing. Database migrations managed with Liquibase. Frontend built with React 19, TypeScript, Vite 8, TailwindCSS 4, and shadcn/ui. Real-time features via WebSocket/STOMP. Docker Compose for development. GitLab CI/CD for deployment.",
-      "keyTechnologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
-      "challenges": "Designing a modular monolith with clean domain boundaries, implementing QR-verified prescription and pharmacy workflows, managing concurrent pharmacy dispensing operations, building a real-time chat system, and integrating transactional notification events.",
-      "whatILearned": "Modular monolith architecture patterns, Spring Boot 4.1 with modern Spring ecosystem, healthcare domain modeling, QR code generation and verification workflows, and concurrent operation handling in a multi-role system."
-    }
-  },
-  {
-    "slug": "ai-knowledge-hr-copilot",
-    "title": "AI Knowledge & HR Copilot",
-    "shortDescription": "An internal AI assistant combining a RAG knowledge base with HR workflows — vector-search document retrieval with a two-layer hallucination-refusal system, plus CV extraction and candidate scoring.",
-    "techStack": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
-    "features": ["RAG-based Knowledge Base with document chunking and embedding pipeline", "HNSW-indexed Vector Search with cosine similarity", "Two-layer Hallucination-refusal System (threshold gate + context-grounded generation)", "CV Extraction via Gemini JSON-schema mode", "Candidate Scoring with deterministic skill-matching algorithm (0-100)", "Onboarding Checklists grounded in company documents", "RBAC with Team-scoped Manager Permissions", "Hybrid Semantic + Keyword Document Search", "Swagger-documented API", "Jest Unit Tests + E2E Tests Against Live Database"],
-    "githubLink": "",
-    "details": {
-      "role": "Built the AI Knowledge & HR Copilot as the primary backend engineer — the RAG pipeline, vector search, hallucination prevention, CV extraction, and HR workflow features.",
-      "overview": "An internal AI assistant combining a RAG-based knowledge base with structured HR workflows. The system provides vector-search document retrieval with a two-layer hallucination-refusal system, CV extraction, and candidate scoring.",
-      "problem": "Organizations need efficient ways to search internal documents, onboard new employees, and evaluate candidates. Traditional keyword search misses semantic context, and HR processes are often manual and time-consuming.",
-      "solution": "Built a pnpm monorepo with NestJS 11 backend and Next.js 16 frontend. Implemented a RAG pipeline with document chunking, embedding generation, and HNSW-indexed vector search using pgvector. Added a two-layer hallucination-refusal system for reliable AI-generated answers. CV extraction uses Gemini's JSON-schema mode with deterministic candidate scoring.",
-      "architecture": "pnpm monorepo with NestJS 11 (backend) and Next.js 16 (frontend). PostgreSQL 16 with pgvector for vector storage and HNSW indexing. Document chunking and embedding pipeline for RAG. Two-layer hallucination-refusal: threshold gate + context-grounded generation. JWT/Passport authentication with RBAC. Docker for development. GitLab CI for deployment.",
-      "keyTechnologies": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
-      "challenges": "Implementing reliable RAG with hallucination prevention, designing the two-layer refusal system, building a robust document chunking and embedding pipeline, and creating deterministic candidate scoring that integrates with AI-extracted CV data.",
-      "whatILearned": "RAG architecture patterns, vector database design with pgvector, hallucination prevention strategies, Gemini API integration for structured extraction, and monorepo management with pnpm workspaces."
     }
   }
 ]

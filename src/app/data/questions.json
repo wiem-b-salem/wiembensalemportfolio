@@ -25,7 +25,7 @@
       "id": "what-projects",
       "question": "What projects has Wiem worked on?",
       "category": "projects",
-      "answer": "Wiem has worked on 7 projects including MedFlow (a healthcare SaaS platform), an AI Knowledge & HR Copilot with RAG-based search, an Urban Traffic Management Platform with microservices, a Big Data Analytics Pipeline, TuniWay (tourism platform), TravelTun (multi-platform tourism app), and a School Management System.",
+      "answer": "Wiem has worked on 6 projects. Her most recent and most substantial work is an AI Knowledge & HR Copilot with RAG-based search, built from scratch as the primary backend engineer, and MedFlow, a healthcare SaaS platform where she owned the prescription and localization domains. She has also built an Urban Traffic Management Platform with microservices, a Big Data Analytics Pipeline, TuniWay (tourism platform), and TravelTun (multi-platform tourism app).",
       "relatedSlug": null
     },
     {
@@ -95,7 +95,7 @@
       "id": "database-experience",
       "question": "Does Wiem have experience with databases?",
       "category": "skills",
-      "answer": "Yes, Wiem has experience with multiple database systems: PostgreSQL (used in MedFlow, AI Copilot, School Management, and Urban Traffic), MySQL, MongoDB (used in TuniWay), and Firebase Firestore (used in TravelTun). She also has experience with pgvector for vector search and Liquibase for database migrations.",
+      "answer": "Yes, Wiem has experience with multiple database systems: PostgreSQL (used in MedFlow, AI Knowledge & HR Copilot, and Urban Traffic), MySQL, MongoDB (used in TuniWay), and Firebase Firestore (used in TravelTun). She also has experience with pgvector for vector search and Liquibase for database migrations.",
       "relatedSlug": null
     },
     {

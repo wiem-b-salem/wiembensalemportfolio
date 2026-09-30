@@ -18,6 +18,18 @@
 
       <p class="body-text exp-desc">{{ exp.description }}</p>
 
+      @if (exp.details.highlights.length) {
+        <h3 class="subhead exp-sub">What I shipped</h3>
+        <ul class="checklist">
+          @for (item of exp.details.highlights; track item) {
+            <li class="checklist-item">
+              <span class="check-mark" aria-hidden="true">✓</span>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+      }
+
       @if (exp.details.responsibilities.length) {
         <h3 class="subhead exp-sub">Responsibilities</h3>
         <ul class="checklist">

@@ -36,6 +36,7 @@ export interface SkillCategory {
 }
 
 export interface AdditionalExperienceDetails {
+  highlights: string[];
   responsibilities: string[];
   technologies: string[];
   contributions: string;
