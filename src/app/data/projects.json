@@ -1,57 +1,173 @@
 [
   {
-    "slug": "ai-knowledge-hr-copilot",
-    "title": "AI Knowledge & HR Copilot",
-    "shortDescription": "An internal AI assistant combining a RAG knowledge base with HR workflows — vector-search document retrieval with a two-layer hallucination-refusal system, plus CV extraction and candidate scoring.",
-    "techStack": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
-    "features": ["RAG-based Knowledge Base with document chunking and embedding pipeline", "HNSW-indexed Vector Search with cosine similarity", "Two-layer Hallucination-refusal System (threshold gate + context-grounded generation)", "CV Extraction via Gemini JSON-schema mode", "Candidate Scoring with deterministic skill-matching algorithm (0-100)", "Onboarding Checklists grounded in company documents", "RBAC with Team-scoped Manager Permissions", "Hybrid Semantic + Keyword Document Search", "Swagger-documented API", "Jest Unit Tests + E2E Tests Against Live Database"],
-    "githubLink": "",
-    "details": {
-      "role": "Built the AI Knowledge & HR Copilot as the primary backend engineer — the RAG pipeline, vector search, hallucination prevention, CV extraction, and HR workflow features.",
-      "overview": "An internal AI assistant combining a RAG-based knowledge base with structured HR workflows. The system provides vector-search document retrieval with a two-layer hallucination-refusal system, CV extraction, and candidate scoring.",
-      "problem": "Organizations need efficient ways to search internal documents, onboard new employees, and evaluate candidates. Traditional keyword search misses semantic context, and HR processes are often manual and time-consuming.",
-      "solution": "Built a pnpm monorepo with NestJS 11 backend and Next.js 16 frontend. Implemented a RAG pipeline with document chunking, embedding generation, and HNSW-indexed vector search using pgvector. Added a two-layer hallucination-refusal system for reliable AI-generated answers. CV extraction uses Gemini's JSON-schema mode with deterministic candidate scoring.",
-      "architecture": "pnpm monorepo with NestJS 11 (backend) and Next.js 16 (frontend). PostgreSQL 16 with pgvector for vector storage and HNSW indexing. Document chunking and embedding pipeline for RAG. Two-layer hallucination-refusal: threshold gate + context-grounded generation. JWT/Passport authentication with RBAC. Docker for development. GitLab CI for deployment.",
-      "keyTechnologies": ["NestJS 11", "Next.js 16", "React 19", "Tailwind 4", "PostgreSQL 16", "pgvector", "Google Gemini API", "TypeORM", "JWT / Passport", "pnpm Workspaces", "Docker", "GitLab CI"],
-      "challenges": "Implementing reliable RAG with hallucination prevention, designing the two-layer refusal system, building a robust document chunking and embedding pipeline, and creating deterministic candidate scoring that integrates with AI-extracted CV data.",
-      "whatILearned": "RAG architecture patterns, vector database design with pgvector, hallucination prevention strategies, Gemini API integration for structured extraction, and monorepo management with pnpm workspaces."
-    }
-  },
+  "slug": "ai-knowledge-hr-copilot",
+  "title": "AI Knowledge & HR Copilot",
+  "shortDescription": "An internal AI-powered knowledge and HR platform combining RAG-based document retrieval with structured HR workflows for CV analysis, candidate matching, and employee onboarding.",
+  "techStack": [
+    "NestJS 11",
+    "Next.js 16",
+    "React 19",
+    "Tailwind CSS 4",
+    "PostgreSQL 16",
+    "pgvector",
+    "Google Gemini API",
+    "TypeORM",
+    "JWT / Passport",
+    "pnpm Workspaces",
+    "Docker",
+    "GitLab CI"
+  ],
+  "features": [
+    "RAG-based Knowledge Base",
+    "Document Chunking and Embeddings",
+    "HNSW-indexed Vector Search",
+    "Two-layer Hallucination Refusal",
+    "Gemini JSON-schema CV Extraction",
+    "Deterministic 0–100 Candidate Matching",
+    "Document-grounded Onboarding Checklists",
+    "Team-scoped RBAC",
+    "Hybrid Semantic + Keyword Search",
+    "Swagger API Documentation",
+    "Jest Unit Tests",
+    "Live-database E2E Tests"
+  ],
+  "githubLink": "",
+  "details": {
+    "role": "Designed and developed the AI Knowledge & HR Copilot independently, covering the application architecture, backend and frontend implementation, RAG pipeline, vector search, AI integration, HR workflows, authentication, testing, and deployment setup.",
+    "overview": "An internal AI-powered knowledge and HR platform combining a RAG-based knowledge base with structured HR workflows. The system provides document-grounded AI responses, CV extraction and candidate matching, and onboarding assistance.",
+    "problem": "Organizations need efficient ways to retrieve information from internal documentation while streamlining repetitive HR workflows such as candidate evaluation and employee onboarding. Traditional keyword search can miss semantic context, while unrestricted generative AI can produce unsupported answers.",
+    "solution": "Built a pnpm monorepo with a NestJS 11 backend and Next.js 16 frontend. Implemented document chunking, embedding generation, HNSW-indexed vector search with pgvector, and a two-layer hallucination-refusal system combining similarity-threshold validation with context-grounded generation. Integrated Gemini JSON-schema extraction for CV analysis and a deterministic 0–100 skill-matching algorithm.",
+    "architecture": "pnpm monorepo with NestJS 11 and Next.js 16. PostgreSQL 16 with pgvector provides vector storage and HNSW indexing. JWT/Passport authentication and team-scoped RBAC protect application resources. Docker is used for development and GitLab CI for deployment.",
+    "keyTechnologies": [
+      "NestJS 11",
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS 4",
+      "PostgreSQL 16",
+      "pgvector",
+      "Google Gemini API",
+      "TypeORM",
+      "JWT / Passport",
+      "pnpm Workspaces",
+      "Docker",
+      "GitLab CI"
+    ],
+    "challenges": "Building reliable RAG retrieval, designing the two-layer hallucination-refusal mechanism, creating a robust document chunking and embedding pipeline, and connecting AI-extracted CV data with deterministic candidate scoring.",
+    "whatILearned": "RAG architecture, vector database design with pgvector and HNSW indexing, structured AI extraction, hallucination mitigation, deterministic scoring systems, monorepo development, and end-to-end AI application development."
+  }
+},
   {
-    "slug": "medflow",
-    "title": "MedFlow — Healthcare SaaS Platform",
-    "shortDescription": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
-    "techStack": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
-    "features": ["Role-based Access Control (RBAC) for admins, doctors, patients, secretaries, and pharmacists", "JWT + OAuth2 Authentication with Argon2 password hashing", "Electronic Prescriptions with QR code generation, line items, lab tests, and versioned fulfillment tracking", "Pharmacy Module with inventory batches, stock movements, QR verification, and concurrency-safe dispensing", "Appointment Scheduling with doctor availability and status history", "Real-time Doctor-Patient Chat via WebSocket/STOMP", "Transactional Notification Events (AFTER_COMMIT dispatch)", "Email Verification and Multilingual UI (i18next)", "Modular Monolith Architecture with clean domain boundaries", "SpringDoc OpenAPI / Swagger UI and REST Docs"],
-    "githubLink": "",
-    "details": {
-      "role": "Owned the prescription and localization areas of the MedFlow MVP. Implemented QR-verified pharmacy workflows and contributed to the real-time messaging system.",
-      "overview": "A full-stack healthcare SaaS platform that digitizes the clinical workflow — from appointment booking through e-prescriptions and QR-verified pharmacy fulfillment, with role-based access and real-time doctor-patient messaging.",
-      "problem": "Healthcare workflows are often fragmented across paper-based systems, disconnected software tools, and manual processes. This leads to inefficiencies in prescription management, pharmacy fulfillment, appointment scheduling, and patient-doctor communication.",
-      "solution": "Built a modular monolith with Spring Boot 4.1 on the backend and React 19 on the frontend. The system provides electronic prescriptions with QR verification, a pharmacy module with inventory management, appointment scheduling, real-time chat, and role-based access for five distinct user roles.",
-      "architecture": "Modular monolith architecture with clean domain boundaries using Spring Boot 4.1. Backend uses Spring Security with OAuth2/JWT and Argon2 password hashing. Database migrations managed with Liquibase. Frontend built with React 19, TypeScript, Vite 8, TailwindCSS 4, and shadcn/ui. Real-time features via WebSocket/STOMP. Docker Compose for development. GitLab CI/CD for deployment.",
-      "keyTechnologies": ["Java 25", "Spring Boot 4.1", "Spring Security", "OAuth2 / JWT", "PostgreSQL", "Liquibase", "React 19", "TypeScript", "Vite 8", "TailwindCSS 4", "shadcn/ui", "WebSocket / STOMP", "Docker Compose", "GitLab CI/CD", "Gradle"],
-      "challenges": "Designing a modular monolith with clean domain boundaries, implementing QR-verified prescription and pharmacy workflows, managing concurrent pharmacy dispensing operations, building a real-time chat system, and integrating transactional notification events.",
-      "whatILearned": "Modular monolith architecture patterns, Spring Boot 4.1 with modern Spring ecosystem, healthcare domain modeling, QR code generation and verification workflows, and concurrent operation handling in a multi-role system."
-    }
-  },
+  "slug": "medflow",
+  "title": "MedFlow — Healthcare SaaS Platform",
+  "shortDescription": "A full-stack healthcare SaaS platform that brings patient care workflows together through authentication, appointments, prescriptions, pharmacy operations, real-time communication, and multilingual support.",
+  "techStack": [
+    "Java 25",
+    "Spring Boot 4.1",
+    "Spring Security",
+    "JWT",
+    "PostgreSQL",
+    "Liquibase",
+    "React 19",
+    "TypeScript",
+    "Vite 8",
+    "Tailwind CSS 4",
+    "WebSocket / STOMP",
+    "Docker Compose",
+    "GitLab CI/CD",
+    "Gradle"
+  ],
+  "features": [
+    "Multi-role Authentication and Authorization",
+    "JWT-based Security",
+    "Patient and Doctor Registration",
+    "Appointment Scheduling",
+    "Doctor Availability Management",
+    "Electronic Prescriptions",
+    "Pharmacy Fulfillment",
+    "QR-verified Prescriptions",
+    "Real-time Doctor–Patient Messaging",
+    "Notifications",
+    "English / French Localization",
+    "Liquibase Database Migrations",
+    "CI/CD and Production Deployment"
+  ],
+  "githubLink": "",
+  "details": {
+    "role": "Software Engineering Intern contributing across the MedFlow platform, including authentication, appointments, prescriptions, pharmacy workflows, real-time messaging, localization, and deployment.",
+    "overview": "A full-stack healthcare SaaS platform designed to centralize clinical workflows for patients, doctors, secretaries, pharmacies, and administrators.",
+    "problem": "Healthcare workflows involve multiple actors and interconnected processes, including patient management, appointments, prescriptions, pharmacy fulfillment, and communication. MedFlow provides a unified platform for these workflows.",
+    "solution": "Contributed to an 8-week healthcare SaaS MVP built with Spring Boot, React, and PostgreSQL. Worked across authentication and role-based access, appointment scheduling, prescription workflows, pharmacy operations, real-time doctor–patient communication, localization, database migrations, and CI/CD.",
+    "architecture": "Built as a modular Spring Boot backend with a React frontend and PostgreSQL database. Spring Security and JWT handle authentication and role-based authorization. Liquibase manages database migrations, while WebSocket/STOMP provides real-time communication. Docker Compose supports the development environment and GitLab CI/CD handles deployment.",
+    "keyTechnologies": [
+      "Java 25",
+      "Spring Boot 4.1",
+      "Spring Security",
+      "JWT",
+      "PostgreSQL",
+      "Liquibase",
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "Tailwind CSS 4",
+      "WebSocket / STOMP",
+      "Docker Compose",
+      "GitLab CI/CD",
+      "Gradle"
+    ],
+    "challenges": "Working across a multi-role healthcare platform, implementing secure authentication and authorization, coordinating appointment and prescription workflows, handling pharmacy fulfillment, integrating real-time communication, and maintaining consistent database changes through Liquibase.",
+    "whatILearned": "Full-stack development with Spring Boot and React, secure multi-role application design, healthcare workflow modeling, real-time communication with WebSocket/STOMP, database migration management with Liquibase, localization, and collaborative CI/CD-based development."
+  }
+},
   {
-    "slug": "urban-traffic-management",
-    "title": "Urban Traffic Management Platform",
-    "shortDescription": "A distributed microservices-based platform for managing and reporting urban traffic incidents in real time, featuring interactive map visualization, authentication, and containerized deployment.",
-    "techStack": ["NestJS", "GraphQL", "Apollo Server", "Next.js", "React", "PostgreSQL", "TypeORM", "Docker", "JWT", "Leaflet", "GitHub Actions"],
-    "features": ["Microservices Architecture", "GraphQL API Gateway", "JWT Authentication", "Role-based Access Control", "Interactive Map Visualization", "Real-time Incident Reporting", "Admin Dashboard", "Docker Containerization", "CI/CD Pipeline", "Notification System"],
-    "githubLink": "https://github.com/wiem-b-salem/ProjetServicesWeb",
-    "details": {
-      "overview": "A distributed microservices-based platform designed for managing and reporting urban traffic incidents in real time. The system supports multiple user roles with different access levels and provides interactive map-based visualization of traffic events across a city.",
-      "problem": "Urban traffic management requires real-time coordination between multiple stakeholders — incident reporters, administrators, and field responders. Existing solutions often lack real-time capabilities, proper role separation, or visual mapping of incidents.",
-      "solution": "Built a microservices architecture with a GraphQL API gateway, JWT-based authentication with role-based access control, and an interactive map visualization layer using Leaflet. The system supports real-time incident reporting and an admin dashboard for monitoring.",
-      "architecture": "The platform uses a microservices architecture with separate services for authentication, incident management, and user management. A GraphQL API gateway (Apollo Server) routes requests to the appropriate service. The frontend is built with Next.js/React, and PostgreSQL is used for persistent storage. Docker and GitHub Actions handle deployment and CI/CD.",
-      "keyTechnologies": ["NestJS", "GraphQL", "Apollo Server", "Next.js", "React", "PostgreSQL", "TypeORM", "Docker", "JWT", "Leaflet"],
-      "challenges": "Coordinating communication between microservices while maintaining data consistency, implementing secure JWT authentication with role-based access across service boundaries, and designing the real-time incident reporting pipeline.",
-      "whatILearned": "Microservices architecture patterns, GraphQL API design with Apollo Server, real-time data handling with WebSockets, role-based access control implementation, and containerized deployment with Docker."
-    }
-  },
+  "slug": "urban-traffic-management",
+  "title": "Urban Traffic Management Platform",
+  "shortDescription": "A microservices-based platform for managing and reporting urban traffic incidents, featuring GraphQL APIs, interactive map visualization, authentication, and containerized deployment.",
+  "techStack": [
+    "NestJS",
+    "GraphQL",
+    "Apollo Server",
+    "Next.js",
+    "React",
+    "PostgreSQL",
+    "TypeORM",
+    "Docker",
+    "JWT",
+    "Leaflet",
+    "GitHub Actions"
+  ],
+  "features": [
+    "Microservices Architecture",
+    "GraphQL API Gateway",
+    "JWT Authentication",
+    "Role-based Access Control",
+    "Interactive Leaflet Map",
+    "Traffic Incident Reporting",
+    "Admin Dashboard",
+    "Docker Containerization",
+    "CI/CD Pipeline"
+  ],
+  "githubLink": "https://github.com/wiem-b-salem/ProjetServicesWeb",
+  "details": {
+    "overview": "A microservices-based platform for managing and reporting urban traffic incidents. The system provides role-based access and interactive map visualization for monitoring traffic events.",
+    "problem": "Urban traffic management requires efficient coordination of incident information and clear visualization of events across a city.",
+    "solution": "Built a microservices architecture with a GraphQL API gateway, JWT authentication with role-based access control, and an interactive Leaflet-based map for visualizing and reporting traffic incidents.",
+    "architecture": "The platform uses separate microservices with a GraphQL API gateway for communication. The frontend uses Next.js and React, with PostgreSQL for persistent storage. Docker is used to containerize the services and GitHub Actions supports CI/CD.",
+    "keyTechnologies": [
+      "Node.js",
+      "GraphQL",
+      "Apollo Server",
+      "React",
+      "PostgreSQL",
+      "TypeORM",
+      "Docker",
+      "JWT",
+      "Leaflet",
+      "GitHub Actions"
+    ],
+    "challenges": "Designing communication between microservices, implementing authentication and role-based access, and building an interactive map-based interface for traffic incident visualization.",
+    "whatILearned": "Microservices architecture, GraphQL API design, role-based access control, interactive map integration, and containerized application development."
+  }
+},
   {
     "slug": "big-data-analytics-pipeline",
     "title": "Big Data Analytics Pipeline",
@@ -70,37 +186,37 @@
     }
   },
   {
-    "slug": "tuniway",
-    "title": "TuniWay",
-    "shortDescription": "A tourism exploration platform designed to simplify navigation and discovery across Tunisia through interactive and user-oriented features.",
-    "techStack": ["Angular", "Spring Boot", "MongoDB"],
-    "features": ["User Authentication", "Chat System", "AI Chatbot", "Tourism Discovery", "Interactive Navigation"],
-    "githubLink": "https://github.com/wiem-b-salem/Tuniway",
-    "details": {
-      "overview": "A full-stack tourism exploration platform designed to simplify navigation and discovery across Tunisia. The application combines interactive maps, user authentication, a chat system, and an AI-powered chatbot to help travelers explore Tunisian destinations.",
-      "problem": "Tourists visiting Tunisia often struggle to find reliable, curated information about local attractions, restaurants, and experiences. Existing travel apps may not provide localized content or interactive features for the Tunisian context.",
-      "solution": "Built a full-stack application with Angular on the frontend, Spring Boot for the backend, and MongoDB for flexible data storage. The platform includes user authentication, a real-time chat system, an AI chatbot for recommendations, and interactive navigation features.",
-      "architecture": "Angular handles the frontend UI with interactive components. Spring Boot provides RESTful APIs and business logic. MongoDB stores flexible document-based data for attractions, user profiles, and chat history. The architecture supports real-time features through WebSocket integration.",
-      "keyTechnologies": ["Angular", "Spring Boot", "MongoDB"],
-      "challenges": "Implementing real-time chat functionality, integrating an AI chatbot for tourism recommendations, designing an intuitive navigation interface, and handling the flexible data requirements of tourism content.",
-      "whatILearned": "Full-stack development with Angular and Spring Boot, NoSQL database design with MongoDB, real-time communication implementation, and AI integration for user-facing features."
-    }
-  },
-  {
-    "slug": "traveltun",
-    "title": "TravelTun",
-    "shortDescription": "A multi-platform tourism application for discovering local heritage and booking travel experiences with an integrated administration dashboard.",
-    "techStack": ["Flutter", "Firebase", "Flask"],
-    "features": ["Booking System", "User Reviews", "Admin Dashboard", "User Management", "Location Management", "Payment Integration", "Notification System", "Chat System"],
-    "githubLink": "https://github.com/wiem-ben-salem/traveltun",
-    "details": {
-      "overview": "A multi-platform tourism application for discovering local heritage and booking travel experiences. The app features a Flutter mobile client, a web-based admin dashboard, Firebase for backend services, and Flask for API management.",
-      "problem": "Local tourism businesses in Tunisia need a digital platform to showcase their offerings, manage bookings, and interact with customers. Travelers need a reliable way to discover and book authentic local experiences.",
-      "solution": "Built a cross-platform Flutter mobile app with a web admin interface. Firebase handles authentication, real-time database, and cloud storage. Flask provides the API layer for business logic. The system includes booking, reviews, payments, and real-time notifications.",
-      "architecture": "Flutter provides the mobile UI with a single codebase for iOS and Android. Firebase services handle authentication, Firestore for the database, and Cloud Storage for media. Flask serves as the backend API for complex business logic. The admin dashboard is a separate web application.",
-      "keyTechnologies": ["Flutter", "Firebase", "Flask"],
-      "challenges": "Building a cross-platform mobile experience with Flutter, integrating multiple Firebase services, implementing a payment system, and designing an admin dashboard that provides meaningful management capabilities.",
-      "whatILearned": "Cross-platform mobile development with Flutter, Firebase ecosystem integration, payment system implementation, and building admin interfaces for non-technical users."
-    }
+  "slug": "tuniway",
+  "title": "TuniWay",
+  "shortDescription": "A full-stack tourism exploration platform focused on discovering destinations, restaurants, cafés, tours, and local guides across Tunisia.",
+  "techStack": [
+    "Angular",
+    "Spring Boot",
+    "MongoDB"
+  ],
+  "features": [
+    "JWT Authentication",
+    "Role-based Access Control",
+    "Tourism Discovery",
+    "Places and Restaurant Listings",
+    "Tours and Guide Management",
+    "Reviews",
+    "Admin Dashboard",
+    "AI Chatbot"
+  ],
+  "githubLink": "https://github.com/wiem-b-salem/Tuniway",
+  "details": {
+    "overview": "A full-stack tourism exploration platform focused on helping users discover destinations, restaurants, cafés, tours, and local guides across Tunisia.",
+    "problem": "Tourists need accessible and organized information about destinations and local experiences. TuniWay brings different tourism-related services and information together in one platform.",
+    "solution": "Built a full-stack application using Angular, Spring Boot, and MongoDB. Implemented JWT authentication and role-based access control, tourism content management, reviews, an administrative dashboard, and an AI chatbot for tourism-related assistance.",
+    "architecture": "Angular provides the frontend interface while Spring Boot handles the backend APIs and business logic. MongoDB stores tourism content and application data. JWT-based authentication and role-based access control separate user and administrative functionality.",
+    "keyTechnologies": [
+      "Angular",
+      "Spring Boot",
+      "MongoDB"
+    ],
+    "challenges": "Designing the full-stack architecture, implementing role-based access and administrative functionality, organizing different types of tourism content, and integrating an AI chatbot using a tourism dataset.",
+    "whatILearned": "Full-stack development with Angular and Spring Boot, MongoDB data modeling, JWT authentication and role-based access control, administrative application design, and AI integration."
   }
+}
 ]
